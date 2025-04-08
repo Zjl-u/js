@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function getPan(num) {
-            if (num % 4 == 0 && num % 100 != 0 || num % 400 == 0) {
-                return num + '是闰年';
+        function reverse(arr) {
+            var newArr = [];
+            for (var i = arr.length; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
             }
-            else {
-                return num + '不是闰年';
-            }
+            return newArr;
         }
-        console.log(getPan(1999));
+        var arr1 = reverse([2, 6, 2, 5, 1, 0]);
+        console.log(arr1);
 
     </script>
 </head>
