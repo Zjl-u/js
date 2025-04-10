@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Wangzhe(uname, power, blood) {
+            this.name = uname;
+            this.po = power;
+            this.bl = blood;
+            this.attatch = function (resist) {
+                console.log(resist);
+            }
+        }
+        var wz = new Wangzhe('廉颇', '力量型', 500);
+        console.log(wz.name);
+        console.log(wz.po)
+        console.log(wz.bl)
+        wz.attatch('近战');
+        var hy = new Wangzhe('后裔', '射手型', 300);
+        console.log(hy.name);
+        console.log(hy.po);
+        console.log(hy.bl);
+        wz.attatch('远战');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
