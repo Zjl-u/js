@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = prompt('欢迎使用简易计算器：' + '\n' + '1.加法运算' + '\n' + '2.减法运算' + '\n'
+            + '3.乘法运算' + '\n' + '4.除法运算' + '\n' + '5.退出' + '\n' + '请输入您的选项：');
+
+        var c;
+        if (num == 1) {
+            var a = Number(prompt('请输入运算的第一个数'));
+            var b = Number(prompt('请输入运算的第二个数'));
+            c = a + b;
+            alert(c);
+        }
+        else if (num == 2) {
+            var a = Number(prompt('请输入运算的第一个数'));
+            var b = Number(prompt('请输入运算的第二个数'));
+            c = a - b;
+            alert(c);
+        }
+        else if (num == 3) {
+            var a = Number(prompt('请输入运算的第一个数'));
+            var b = Number(prompt('请输入运算的第二个数'));
+            c = a * b;
+            alert(c);
+        }
+        else if (num == 4) {
+            var a = Number(prompt('请输入运算的第一个数'));
+            var b = Number(prompt('请输入运算的第二个数'));
+            c = a / b;
+            alert(c);
+        }
+        else if (num == 5) {
+            alert('已退出计算器');
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
