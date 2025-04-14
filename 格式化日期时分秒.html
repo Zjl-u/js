@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function getTime() {
+            var time = new Date();
+            var hours = time.getHours();
+            hours = hours < 10 ? '0' + hours : hours;
+            var minute = time.getMinutes();
+            minute = minute < 10 ? '0' + minute : minute;
+            var second = time.getSeconds();
+            second = second < 10 ? '0' + second : second;
+            return hours + ':' + minute + ':' + second;
+        }
+        console.log(getTime());
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
