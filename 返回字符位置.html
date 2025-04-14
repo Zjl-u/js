@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'abcoefoxyozzopp';
+        function array(str) {
+            var num = 0;
+            var newStr = 'o';
+            for (var i = 0; i < str.length; i++) {
+                if (newStr.indexOf(str[i]) != -1) {
+                    num++;
+                    console.log(i);
+                }
+            }
+            return num;
+        }
+        console.log(array(str));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
