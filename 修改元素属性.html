@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="b1">1</button>
+    <button class="b2">2</button>
+    <img src="9.png" alt="">
+    <script>
+        var but1 = document.querySelector('.b1');
+        var but2 = document.querySelector('.b2');
+        var imgs = document.querySelector('img');
+        but2.onclick = function () {
+            imgs.src = '10.png';
+        }
+        but1.onclick = function () {
+            imgs.src = '9.png';
+        }
+    </script>
+</body>
+
+</html>
