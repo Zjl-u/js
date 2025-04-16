@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            /* height: 200px; */
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            top: 5px;
+            left: 365px;
+            position: absolute;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="yincang.png" alt="">
+        </label>
+        <input type="password" id="">
+    </div>
+    <script>
+        var input = document.querySelector('input');
+        var img = document.querySelector('img');
+        var flag = 0;
+        img.onclick = function () {
+            if (flag == 0) {
+                input.type = 'text';
+                img.src = 'display.png';
+                flag = 1;
+            }
+            else {
+                input.type = 'password';
+                img.src = 'yincang.png';
+                flag = 0;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
