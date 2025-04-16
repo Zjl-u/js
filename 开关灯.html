@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .change {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button>开关</button>
+    <script>
+        var flag = 0;
+        var btn = document.querySelector('button');
+        var body = document.querySelector('body');
+        btn.onclick = function () {
+            if (flag == 0) {
+                body.className = 'change';
+                flag = 1;
+            }
+            else {
+                body.className = 'body';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

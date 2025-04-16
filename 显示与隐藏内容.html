@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: #999;
+            font-size: 14px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="QQ/手机号/邮箱">
+    <script>
+        var ipt = document.querySelector('input');
+        ipt.onclick = function () {
+            if (this.value == 'QQ/手机号/邮箱') {
+                this.value = '';
+            }
+            this.style.color = 'black';
+        }
+        ipt.onblur = function () {
+            if (this.value == '') {
+                this.value = 'QQ/手机号/邮箱';
+            }
+            this.style.color = '#999';
+        }
+    </script>
+</body>
+
+</html>

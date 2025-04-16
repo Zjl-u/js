@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            height: 20px;
+            width: 50px;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            margin: 200px auto;
+            border: 1px solid red;
+            cursor: pointer;
+        }
+
+        .xiala {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        .xiala ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .xiala li {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">新浪
+        <div class="xiala">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var xiala = document.querySelector('.xiala');
+        box.addEventListener('mouseenter', function () {
+            xiala.style.display = 'block';
+        });
+        box.addEventListener('mouseleave', function () {
+            xiala.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

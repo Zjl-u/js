@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            margin: auto 200px;
+        }
+
+        p {
+            position: absolute;
+            top: -25px;
+            left: -20px;
+            height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="http://51buxi.xyz/"><img src="1.png" alt=""></a>
+        <p><img src="fork (1).png" alt=""></p>
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        var p = document.querySelector('p');
+        p.onclick = function () {
+            div.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
