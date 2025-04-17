@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid skyblue;
+            margin: 100px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid skyblue;
+        }
+
+        th {
+            background-color: #4196c1;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th><input type="checkbox" name="" id="j_cbAll"></th>
+            <th>表头1</th>
+            <th>表头2</th>
+        </thead>
+        <tbody id="j_tb">
+            <tr>
+                <td><input type="checkbox" id="checkbox"></td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="checkbox"></td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var j_cbAll = document.querySelector('#j_cbAll');
+        var j_tbs = document.querySelector('#j_tb').getElementsByTagName('input');
+        j_cbAll.onclick = function () {
+            console.log(this.checked);
+            for (var i = 0; i < j_tbs.length; i++) {
+                j_tbs[i].checked = this.checked;
+            }
+        }
+        for (var i = 0; i < j_tbs.length; i++) {
+            j_tbs[i].onclick = function () {
+                var flag = true;
+                for (var i = 0; i < j_tbs.length; i++) {
+                    if (!j_tbs[i].checked) {
+                        j_cbAll.checked = false;
+                        flag = false;
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

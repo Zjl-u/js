@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid skyblue;
+            margin: 100px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid skyblue;
+        }
+
+        th {
+            background-color: #4196c1;
+            color: #fff;
+        }
+
+        .bg {
+            background-color: #0ad5eb;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>表头1</th>
+            <th>表头2</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function () {
+                this.className = 'bg';
+            }
+            trs[i].onmouseout = function () {
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

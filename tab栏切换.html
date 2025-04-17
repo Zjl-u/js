@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            display: inline-block;
+        }
+
+        li {
+            font-size: 20px;
+            list-style: none;
+            display: inline-block;
+            padding: 5px;
+            line-height: 20px;
+        }
+
+        .tab_list {
+            width: 510px;
+            background-color: #efecec;
+        }
+
+        .current {
+            background-color: #ba7272;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li>商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后与保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item">
+                商品模块介绍内容
+            </div>
+            <div class="item">
+                规格与包装介绍内容
+            </div>
+            <div class="item">
+                售后与保障介绍内容
+            </div>
+            <div class="item">
+                商品评价介绍内容
+            </div>
+            <div class="item">
+                手机社区介绍内容
+            </div>
+        </div>
+    </div>
+    <script>
+        var tab_list = document.querySelector('.tab_list');
+        var lis = tab_list.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            var items = document.querySelectorAll('.item');
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current';
+                var index = this.getAttribute('index');
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none';
+                }
+                items[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
