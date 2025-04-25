@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //可视区
+        document.addEventListener('click', function (e) {
+            console.log(e.clientX);
+            console.log(e.clientY);
+
+        })
+        //页面文档
+        document.addEventListener('click', function (e) {
+            console.log(e.pageX);
+            console.log(e.pageY);
+
+        })
+        //电脑屏幕
+        document.addEventListener('click', function (e) {
+            console.log(e.screenX);
+            console.log(e.screenY);
+
+        })
+    </script>
+</body>
+
+</html>

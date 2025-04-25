@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <script>
+        //事件对象
+        var div = document.querySelector('div');
+        div.onclick = function (event) {
+            console.log(event);
+            e = e || window.event;
+        }
+        //event就是一个事件对象，写到侦听函数的小括号里面，当形参来看
+        //事件对象只有有了事件才会存在，它是系统自动创建的，不需要我们传递参数，比如鼠标点击，里面就包含了鼠标的相关信息，像鼠标坐标，如果是键盘事件，里面就包含了键盘事件的信息，像判断用户按下了哪个键
+        // 这个事件对象我们可以自己命名，比如event，eve，e
+        // 这个也有兼容性问题 ie678通过window.event,兼容性写法 e= e||window.event
+    </script>
+</body>
+
+</html>
