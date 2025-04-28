@@ -5,28 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function countDown(time) {
-            var deadday = +new Date(time);
-            var today = +new Date();
-            var times = (deadday - today) / 1000;
-            var d = parseInt(times / 60 / 60 / 24);
-            d = d < 10 ? '0' + d : d;
-            var h = parseInt(times / 60 / 60 % 24);
-            h = h < 10 ? '0' + h : h;
-            var m = parseInt(times / 60 % 60);
-            m = m < 10 ? '0' + m : m;
-            var s = parseInt(times % 60);
-            s = s < 10 ? '0' + s : s;
-            return d + '天' + h + '时' + m + '分' + s + '秒';
+    <style>
+        span {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            line-height: 16px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #000;
+            margin: 5px;
         }
-        console.log(countDown('2025-5-1 20:00:00'));
-
-    </script>
+    </style>
 </head>
 
 <body>
-
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = +new Date('2025-7-22 18:00:00');
+        count();
+        setInterval(count, 1000);
+        function count() {
+            var nowTime = +new Date();
+            var times = (inputTime - nowTime) / 1000;
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+    </script>
 </body>
 
 </html>
