@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .login-header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            font-size: 18px;
+            transform: translateX(-50%);
+        }
+
+        .login {
+            /* display: none; */
+            width: 520px;
+            height: 300px;
+            position: fixed;
+            border: #ebebeb solid 1px;
+            left: 50%;
+            top: 50%;
+            background: #fff;
+            box-shadow: 0px 0px 20px #ddd;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+        .login-title {
+            width: 100%;
+            margin: 10px 0px 0px 0px;
+            text-align: center;
+            line-height: 40px;
+            height: 109px;
+            font-size: 18px;
+            position: relative;
+            border: none;
+        }
+
+        .login-title span {
+            position: absolute;
+            right: -11px;
+            top: -30px;
+            font-size: 12px;
+            background: #fff;
+            border: #ebebeb solid 1px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .login-title span a {
+            position: absolute;
+            left: 0px;
+            line-height: 30px;
+            height: 30px;
+            width: 30px;
+        }
+
+        .login-title p {
+            position: relative;
+            top: 20px;
+            left: 0;
+        }
+
+        .login-input-content {
+            margin-top: 0;
+            margin-left: 92px;
+        }
+
+        .login-button {
+            width: 58px;
+            margin: 30px auto 0px auto;
+            line-height: 40px;
+            font-size: 14px;
+            border: 1px solid #ebebeb;
+            border-radius: 21px;
+            text-align: center;
+        }
+
+        .login-bg {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .3);
+        }
+
+        .login-button a {
+            display: block;
+        }
+
+        .login-input input.list-input {
+            float: left;
+            line-height: 35px;
+            height: 35px;
+            width: 35px;
+            border: #ebebeb 1px solid;
+        }
+
+        .login-input {
+            overflow: hidden;
+            margin: 0px 0px 20px 0px;
+        }
+
+        .login-input label {
+            float: left;
+            width: 90px;
+            padding-right: 10px;
+            text-align: right;
+            line-height: 35px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-header"><a href="javascript:;" id="link">点击登录会员</a></div>
+    <div class="login" id="login">
+        <div class="login-title" id="title">
+            <p>登录会员</p>
+            <span><a href="javascript:;" id="closeBtn" class="close-login">关闭</a></span>
+        </div>
+        <div class="login-input-content">
+            <div class="login-input">
+                <label for="username">用户名：</label>
+                <input type="text" placeholder="请输入用户名" id="username" name="info[username]" class="login-username">
+            </div>
+            <div class="login-input">
+                <label for="password">密码：</label>
+                <input type="password" placeholder="请输入密码" id="password" name="info[password]" class="login-password">
+            </div>
+        </div>
+        <div class="login-button" id="loginBtn"><a href="javascript:void(0);" id="login-button-submit">登录</a></div>
+    </div>
+    <!-- 遮盖层 -->
+    <div class="login-bg" id="bg"></div>
+</body>
+
+</html>
