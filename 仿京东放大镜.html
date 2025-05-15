@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .preview_img {
+            position: relative;
+            height: 300px;
+            width: 300px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 200px;
+            width: 200px;
+            background-color: #FEDE4F;
+            opacity: .5;
+            border: 1px solid #ccc;
+            cursor: move;
+        }
+
+        .big {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 340px;
+            width: 400px;
+            height: 400px;
+            /* background-color: pink; */
+            z-index: 999;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        .big img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 600px;
+            width: 600px;
+            min-width: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preview_img">
+        <img src="1.jpg" alt="">
+        <div class="mask"></div>
+        <div class="big">
+            <img src="1.jpg" alt="" class="bigImg">
+        </div>
+    </div>
+    <script>
+        var preview_img = document.querySelector('.preview_img');
+        var mask = document.querySelector('.mask');
+        var big = document.querySelector('.big');
+        var smallImg = preview_img.querySelector('img');
+        var bigImg = big.querySelector('img');
+        var scaleRatio = bigImg.width / smallImg.width;
+        preview_img.addEventListener('mouseover', function () {
+            mask.style.display = 'block';
+            big.style.display = 'block';
+        })
+        preview_img.addEventListener('mouseleave', function () {
+            mask.style.display = 'none';
+            big.style.display = 'none';
+        })
+        preview_img.addEventListener('mousemove', function (e) {
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            var maskX = x - mask.offsetWidth / 2;
+            var maskY = y - mask.offsetHeight / 2;
+            var maskMax = preview_img.offsetWidth - mask.offsetWidth;
+            if (maskX < 0) {
+                maskX = 0;
+            }
+            else if (maskX > maskMax) {
+                maskX = maskMax;
+            }
+            if (maskY < 0) {
+                maskY = 0;
+            }
+            else if (maskY > maskMax) {
+                maskY = maskMax;
+            }
+            mask.style.left = maskX + 'px';
+            mask.style.top = maskY + 'px';
+            var bigImg = document.querySelector('.bigImg');
+            var bigMax = bigImg.offsetWidth - big.offsetWidth;
+            var bigX = maskX * bigMax / maskMax;
+            var bigY = maskY * bigMax / maskMax;
+            bigImg.style.left = -bigX + 'px';
+            bigImg.style.top = -bigY + 'px';
+        })
+
+    </script>
+</body>
+
+</html>
