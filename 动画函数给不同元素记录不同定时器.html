@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button>点我</button>
+    <script>
+        function annimate(obj, target) {
+            var obj = document.querySelector('div');
+            obj.timer = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 30)
+        }
+        var div = document.querySelector('div');
+        var button = document.querySelector('button');
+        button.addEventListener('click', function () {
+            annimate(div, 300);
+        })
+    </script>
+</body>
+
+</html>
