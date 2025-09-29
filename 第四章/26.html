@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let lessons = [
+        { title: "布局", category: "css" },
+        { title: "模型", category: "css" },
+        { title: "操作", category: "mysql" }
+    ];
+    // let arr = ['chuan', 'le'];
+    // let hd = arr.map(function (value, index, arr) {
+    //     value = `川 -${value}`;
+    //     return value;
+    // });
+    // console.log(hd);
+
+    lessons.map(function (value) {
+        value.click = 100;
+    })
+    console.table(lessons);
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let arr = ["chuan", "le"];
+    // let newArray = arr.filter(function (value, index, arr) {
+    //     return false;
+    // })
+    // console.log(newArray);
+
+    let lessons = [
+        { title: "布局", category: "css" },
+        { title: "模型", category: "css" },
+        { title: "操作", category: "mysql" }
+    ]
+    const cssLessons = lessons.filter(function (lesson) {
+        return lesson['category'] == 'css';
+    })
+    console.log(cssLessons)
+</script>
+
+</html>
