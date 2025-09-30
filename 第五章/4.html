@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let symbol = Symbol('这是一个Symbol类型');
+    // let hd = {
+    //     name: "后盾人",
+    //     [symbol]: 'chuanchuan'
+    // };
+    // for (const key in hd) {
+    //     console.log(key);
+    // }
+
+    // for (const key of Object.getOwnPropertySymbols(hd)) {
+    //     console.log(key);
+    // }
+
+    // for (const key of Reflect.ownKeys(hd)) {
+    //     console.log(key);
+    // }
+    let site = Symbol('这是一个Symvoe');
+    class User {
+        constructor(name) {
+            this.name = name;
+            this[site] = "chuan";
+        }
+        getName() {
+            return `${this[site]} ${this.name}`;
+        }
+    }
+    let chuan = new User('川川');
+    // console.log(chuan.getName());
+    for (const key in chuan) {
+        console.log(key);
+    }
+</script>
+
+</html>
