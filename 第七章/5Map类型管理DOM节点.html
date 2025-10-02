@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div name="川">chuan</div>
+    <div name="乐">le</div>
+</body>
+<script>
+    // 把DOM元素保存成Map对象
+    let map = new Map();
+    document.querySelectorAll('div').forEach(item => {
+        map.set(item, {
+            content: item.getAttribute("name")
+        });
+    });
+    // console.log(map);
+
+    // 后面要对它进行操作时直接用map即可
+    map.forEach((config, elem) => {
+        // console.log(config);
+        elem.addEventListener('click', function () {
+            alert(config.content);
+        })
+    })
+</script>
+
+</html>

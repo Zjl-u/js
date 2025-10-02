@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = { name: '川' };
+    cms = hd;
+    hd - null;
+    cms = null;
+    let map = new WeakMap();
+    map.set(hd, "chuan");
+    console.log(map);
+    //一般类型引用，系统会增加引用次数，只有在引用次数删光后才会删除数据
+    //而WeakMap不增加引用次数，别的引用次数删光时，它还以为自己在引用呢
+
+    //它也不能用keys和values，以及size,遍历也不能用
+    // console.log(map.keys());
+    // console.log(map.values());
+    // console.log(map.size);
+</script>
+
+</html>

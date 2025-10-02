@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>川</div>
+    <div>乐</div>
+</body>
+<script>
+    // let map=new WeakMap();
+    // map.set([],"chuan");//里面的值必须是对象
+
+    // 用WeakMap操作DOM元素
+    // let divs = document.querySelectorAll('div');
+    // let map = new WeakMap();
+    // divs.forEach(item => map.set(item, item.innerHTML));
+    // console.log(map);
+
+    // 基本语法
+    let arr = [];
+    let map = new WeakMap();
+    map.set(arr, "chuan");//添加元素
+    // map.delete(arr);//删除元素
+    // console.log(has(arr));//判断返回布尔类型，有返回true，没有返回false
+    // console.log(map);
+
+    // 但values和keys不能用
+    // console.log(map.keys());
+    // let hd = new Map([['name', '川']]);
+    // console.log(hd.keys());
+    // console.log(hd.size());不能使用size
+    
+    // 也不能用for of
+    // for (const element of map) {
+    //     console.log(element);
+    // }
+</script>
+
+</html>
