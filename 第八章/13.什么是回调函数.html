@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="ch">chuan</button>
+</body>
+<script>
+    // document.getElementById('ch').addEventListener('click', function () {//这个function函数就是回调函数
+    //     alert(this.innerHTML);
+    // })
+
+    let hd = [1, 2, 3, 4];
+    hd.map(function (value, index, array) {
+        array[index] += 10;
+        return value;
+    })
+    console.table(hd)
+</script>
+
+</html>

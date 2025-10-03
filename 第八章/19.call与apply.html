@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>chuan</button>
+    <button>le</button>
+</body>
+<script>
+    // call和apply对DOM元素处理
+    // function show() {
+    //     alert(this.innerHTML);
+    // }
+    // let buttons = document.querySelectorAll('button');
+    // for (let i = 0; i < buttons.length; i++) {
+    //     buttons[i].addEventListener('click', (event) => {
+    //      // show.call(event.target);
+    //         show.apply(event.target);
+    //      // 不传参数时，call和apply一样
+    //     })
+    // }
+
+    //call和apply传参的区别
+    // let lisi = {
+    //     name: '李四'
+    // }
+    // let wangwu = {
+    //     name: '王五'
+    // }
+    // function User(web, url) {
+    //     console.log(web + url + this.name);
+    // }
+    // User.call(lisi, '川', 'chuan');//此时会立即执行
+    // call第一个参数改变this的指向，后面加的参数用逗号隔开
+
+    // User.apply(lisi, ['川', 'chuan']);
+    // apply第一个参数改变this的指向，后面加的参数用数组装着
+
+    // 例子：获得最大数字的方法如何获取数组里最大数字
+    // console.log(Math.max(1, 23, 4, 5, 6));
+    let arr = [1, 2, 3, 4, 5]
+    // console.log(Math.max(...arr));//法1 点语法展开
+    console.log(Math.max.apply(Math, arr));//法2 使用apply
+</script>
+
+</html>

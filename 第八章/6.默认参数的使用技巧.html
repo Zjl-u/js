@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function ave(total, year = 1) {//year=1就是默认参数
+    //     year=year||1;//默认参数另一种写法
+    //     return Math.round(total / year);
+    // }
+    // console.log(avg(2000, 3));
+
+    // 例子：数组排序
+    // function sortArray(array, type = "asc") {
+    //     return array.sort(function (a, b) {
+    //         return type == 'asc' ? a - b : b - a;
+    //     });
+    // }
+    // console.log(sortArray([3, 2, 6, 1], 'desc'));
+
+    // 例子：折扣
+    function sum(total, discount = 0, dis = 0) {
+        return total * (1 - discount) * (1 - dis);
+    }
+    console.log(sum(1000, 0.1, 0.2));
+</script>
+
+</html>

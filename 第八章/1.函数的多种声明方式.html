@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.new方法声明
+    // let func = new Function('title', 'console.log(title)');
+    // func("chuan");
+
+    // 2.字面量声明
+    // function hd(title) {
+    //     console.log(title);
+    // }
+    // hd('chuan');
+
+    // 3.表达式赋值
+    // let cms = function (title) {
+    //     console.log(title);
+    // };
+    // cms('chuan');
+
+    // 4.对象中设置匿名函数
+    let user = {
+        name: null,
+        setUsername: function (name) {//简写：setUsername(name){}
+            this.name = name;
+        },
+        getUsername: function () {//简写：getUsername(name){}
+            return this.name;
+        }
+    };
+    user.setUsername('chuan');
+    console.log(user.getUsername());
+</script>
+
+</html>

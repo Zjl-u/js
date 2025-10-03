@@ -1,0 +1,20 @@
+// (function (window) {
+//     function hd() {
+//         console.log('4.2.js-hd');
+//     }
+//     function show() {
+//         console.log('4.2.js-show');
+//     }
+//     window.js2 = { hd, show };
+// })(window)
+
+// 另一种写法（块作用域
+{
+    let hd = function () {
+        console.log('4.2.js-hd');
+    };
+    let show = function () {
+        console.log('4.2.js-show');
+    };
+    window.js2 = { hd, show };
+}

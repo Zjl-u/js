@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* dl {
+            position: absolute;
+            height: 250px;
+            margin-left: 50px;
+        } */
+
+        dt {
+            float: top;
+            width: 100px;
+            background: #ca8a2a;
+            margin: 0;
+            border-top: solid 1px #000;
+        }
+
+        dd {
+            float: top;
+            width: 100px;
+            height: 100px;
+            background: #928d8d;
+            margin: 0;
+        }
+
+        /* dt:nth-child(1) {
+            top: 0;
+        }
+
+        dd:nth-child(2) {
+            top: 23px;
+        }
+
+        dt:nth-child(3) {
+            top: 120px;
+        }
+
+        dd:nth-child(4) {
+            top: 143px;
+        } */
+    </style>
+</head>
+
+<body>
+    <dl>
+        <dt>川</dt>
+        <dd>1</dd>
+        <dt>hd</dt>
+        <dd>2</dd>
+    </dl>
+</body>
+<script>
+    function panel(i) {
+        let dds = document.querySelectorAll('dd');
+        dds.forEach(dd => dd.setAttribute("hidden", "hidden"));
+        dds[i].removeAttribute("hidden");
+    }
+    document.querySelectorAll('dt').forEach((dt, i) => {
+        dt.addEventListener('click', () => panel.call(null, i));
+    });
+</script>
+
+</html>

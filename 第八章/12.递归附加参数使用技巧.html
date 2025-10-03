@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let lessons = [{
+        title: 'FLEX 弹性盒模型',
+        click: 45
+    },
+    {
+        title: 'GRID 栅格系统',
+        click: 19
+    },
+    {
+        title: '盒子模型详解',
+        click: 29
+    }];
+    // 递归实现对象参数统一变化
+    // function change(lessons, num = 100, i = 0) {
+    //     if (i == lessons.length) return lessons;
+    //     lessons[i].click += num;
+    //     return change(lessons, num, ++i)
+    // }
+    // console.table(change(lessons, 40));
+
+    // map实现对象参数统一变化
+    lessons = lessons.map(function (item) {
+        item.click += 100;
+        return item;
+    })
+    console.table(lessons);
+</script>
+
+</html>

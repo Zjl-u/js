@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let lesson = {
+        site: 'chuan',
+        lists: ['js', 'css', 'html'],
+        show: function () {
+            // console.log(this.site);//this指向当前的对象，所以可以读出对象里面的属性
+
+            const self = this;
+            return this.lists.map(function (value) {
+                console.log(value);
+                // 如果此时想在lists的值前面加上site，但是函数里的this指向的是window
+                // 我们可以在函数外设立一个变量，取到指向对象的this-->我们设立的self变量
+                // console.log(self);
+                return `${self.site}-{value}`;
+            }, this)//如果给函数赋值了，那么函数里的this将等于赋的值,如果赋值this，就可以在函数引用指向对象的this了
+        }
+    };
+    console.log(lesson.show());
+</script>
+
+</html>

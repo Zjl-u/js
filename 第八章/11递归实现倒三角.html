@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function star(sum) {
+        if (sum == 0) return '';
+        // 精简版
+        document.write('*'.repeat(sum) + '<br/>') || star(--sum);//因为 document.write('*'.repeat(sum) + '<br/>')的返回值是undefind，也就是假，可以用或运算符把它和下一句连起来
+        // 正常逻辑板
+        document.write('*'.repeat(sum) + '<br/>');
+        star(--sum);
+    }
+    star(5);
+</script>
+
+</html>

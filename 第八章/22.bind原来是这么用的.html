@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>川</button>
+</body>
+<script>
+    document.querySelector('button').addEventListener('click', function (event) {
+        document.write(this.url + event.target.innerHTML);
+    }.bind({ url: 'chuan' }))
+
+
+    // apply,call与bind的区别
+    // function show() {
+    //     console.log(this.name);
+    // }
+    // show.call({ name: 'le' });//call和apply会立刻执行
+    // show.bind({ name: 'le' });//bind不立即执行
+    // let func = show.bind({ name: 'le' });//而是会得到一个新的函数
+    // console.log(func);
+    // show.bind({ name: 'le' })();// 如果想让它立刻执行，在它后面加个括号
+
+    // bind相当于复制
+    // let a = function () {}
+    // let b = a;
+    // console.log(a === b);//true 此时a完全等于b
+    // b = a.bind();
+    // console.log(a === b);//false用bind后，a和b不相等
+
+    // 由于bind不是立即执行，就有2种传参方法
+    // function hd(a, b) {
+    //     console.log(a, b);
+    //     return this.f + a + b;
+    // }
+    // let func = hd.bind({ f: 1 }, 1, 2);//传参方法1
+    // func(2, 3);//传参方法2
+    // func();
+</script>
+
+</html>

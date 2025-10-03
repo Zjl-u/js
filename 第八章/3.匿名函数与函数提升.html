@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = function () {//这种没有声明函数名称的叫做匿名函数
+    //     console.log('1');//匿名函数没有函数提升，用var声明也不会
+    // }
+    // hd();
+
+    // show();//函数提升
+    // function show() {
+    //     console.log('chuan');
+    // }
+
+
+    // hd();//这种情况输出的是chuan
+    // function hd() {
+    //     console.log('chuan');
+    // }
+    // var hd = function () {
+    //     console.log('1');
+    // }
+
+    // function hd() {
+    //     console.log('chuan');
+    // }
+    // var hd = function () {
+    //     console.log('1');
+    // }
+    // hd();//这种情况输出的是1
+
+    // function hd() {
+    //     console.log('chuan');
+    // }
+    // console.log(hd instanceof Object); //函数是对象类型
+    // let cms = hd;
+    // cms();
+
+    //举例：求和函数
+    function sum(...args) {//用点语法后可以随意传递几个参数
+        return args.reduce((a, b) => a + b);
+    }
+    console.log(sum(1, 2, 3, 6, 34, 21, 9));
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // this指的就是当前所在环境的对象
+
+    // 对象里的this
+    // let obj = {
+    //     name: '川',
+    //     show: function () {
+    //         return this.name;//this指的是当前对象的引用
+    //     }
+    // }
+    // console.log(obj.show())
+
+    // 全局里的this
+    // console.log(window);
+    // console.log(this);//全局里的this指的就是window
+
+    // 对象的方法里的函数的this
+    let obj = {
+        name: '川',
+        show: function () {
+            function render() {
+                console.log(this);//此时的this指的是window
+            }
+            render();
+        }
+    }
+    console.log(obj.show())
+</script>
+
+</html>

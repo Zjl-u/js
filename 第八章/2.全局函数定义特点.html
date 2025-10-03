@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function hd() {
+        console.log('chuan');
+    }
+    // window.hd();//函数会默认归属在对象里面
+    // console.log(window);
+
+    // function screenX(){
+    //     console.log(1);
+    // }
+    // console.log(screenX());//此时会把window对象里的screenX覆盖掉
+
+    //var定义的函数会积压在window里面，而let不会
+    // var cms=function(){
+    //     console.log('1');
+    // };
+    // window.cms();
+    let cms = function () {
+        console.log('1');
+    };
+    window.cms();
+</script>
+
+</html>

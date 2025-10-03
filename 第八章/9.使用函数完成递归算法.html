@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 在重复次数不确定时，使用递归
+    // 递归考虑两层即可，再考虑退出时机
+    // 例子：阶乘
+    function factoral(num) {
+        // 正常版
+        // if (num == 1) return 1;
+        // return num * factoral(num - 1);
+
+        // 精简版
+        return num == 1 ? 1 : num * factoral(--num);
+    }
+    console.log(factoral(5));
+</script>
+
+</html>
