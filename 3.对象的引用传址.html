@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let user = {};
+    // let hd = user;//直接把地址赋值给了hd
+    // hd.name = "川";
+    // console.log(user.name);//此时hd改变，user里面的也改变
+
+    let user = {
+        name: '川'
+    };
+    function show(a) {
+        // console.log(a);
+        a.age = 18;
+        console.log(a);//里面的改变了
+    }
+    show(user);
+    console.log(user);//外面的也跟着改变了
+</script>
+
+</html>

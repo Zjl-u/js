@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let user = {
+        name: '川',
+        "my age": 18
+    };
+    // console.log(user.name);//使用点直接读取
+    // console.log(user['name']);//中括号，里面使用字符串形式
+
+    // 一般时候推荐使用点语法，但遇到特殊属性名称时,比如带空格
+    // console.log(user.my age);//点读取不了
+    // console.log(user["my age"]);//此时中括号可以正常读取
+
+    // 遍历属性时也只能用中括号
+    // for (const key in user) {
+    //     // console.log(user.key);//此时点语法无法读取
+    //     console.log(user[key]);//中括号能正常读取
+    // }
+
+    user.age = 19;//给对象直接加属性
+    user.get = function () {//给对象增加方法
+        return `${this.name}的年龄是${this.age}`;
+    }
+    console.log(user.get());
+    delete user.age;//给对象删除属性和方法
+    console.log(user.get());
+</script>
+
+</html>

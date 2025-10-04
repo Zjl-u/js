@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 赋值里的解构
+    // let user = { name: '川', age: 19 };
+    // let { name: n, age: a } = user;//相对于给user的属性新起了一个名字
+    // console.log(n);
+    // let { name, age } = user;//如果旧名字和新名字一样就可以省略
+
+    // 函数返回值里的解构
+    // function hd() {
+    //     return { name: '川', age: 19 };
+    // }
+    // let { name, age } = hd();
+    // console.log(name, age);
+
+    // 函数的赋值也可以
+    // function user({ name, age }) {
+    //     console.log(name, age);
+    // }
+    // user({ name: '川', age: 22 });
+
+    // 系统自带的对象也可以用解构
+    let { random } = Math;//可以只解构其中的一部分
+    console.log(random())
+
+</script>
+
+</html>

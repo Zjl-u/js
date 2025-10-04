@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 对用户的操作---但是这种操作容易出现函数的覆盖问题
+    // let name = '川';
+    // let grade = [
+    //     { name: 'js', score: 100 },
+    //     { name: 'docker', score: 76 },
+    // ];
+    // function average(grade, name) {
+    //     let total = grade.reduce((t, l) => t + l.score, 0);
+    //     return `${name}的平均成绩为${total / grade.length}`;
+    // }
+    // console.log(average(grade, name));
+
+    // 对对象的操作
+    let user = {
+        name: '川',
+        grade: [
+            { name: 'js', score: 100 },
+            { name: 'docker', score: 76 }
+        ],
+        average() {
+            let total = this.grade.reduce((t, l) => t + l.score, 0);
+            return `${this.name}的平均成绩为${total / this.grade.length}`;
+        }
+    }
+    console.log(user.average());
+</script>
+
+</html>

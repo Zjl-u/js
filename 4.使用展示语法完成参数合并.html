@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 展开语法在对象中的使用
+    // let user = { name: '川', age: 19 };
+    // let hd = { ...user, lang: 'le' };
+    // console.log(hd);
+
+    function upload(params) {
+        let config = {
+            type: '*.jpeg,*.png',//如果用户想自己设置传的大小或者类型，参数通过params传上去
+            size: 10000
+        };
+        config = { ...config, ...params };//将他们放在一起，如果用户定义了，那么后面的将会覆盖前面的
+        console.log(config);
+    }
+    console.log(upload({ size: 99, type: '*.gif' }));
+</script>
+
+</html>
