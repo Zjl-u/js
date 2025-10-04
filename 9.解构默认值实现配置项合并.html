@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 数组中解构的默认值
+    // let arr = ['川', '乐'];
+    // let [a, b, c] = arr;
+    // console.log(a, b, c);//多出来的只会显示undefind
+    // 不过我们可以给它加默认值
+    // let [a, b, c = 'chuan'] = arr;
+    // console.log(a, b, c);
+
+    // 对象中解构的默认值
+    // let user = { name: "川", url: "乐" };
+    // let { url, name } = user;//这个顺序正反没关系
+    // console.log(name, url);
+    // let { url, name, title } = user;
+    // console.log(title);//此时多出来的title显示undefind
+    // let { url, name, title = "le" } = user;
+    // console.log(title);//有默认值显示默认值
+
+    // 可以做参数的合并
+    function createElement(options = {}) {
+        let { width = 200, height = 100, backgroundColor = 'red' } = options;
+        // console.log(width, height, backgroundColor);
+        const div = document.createElement('div');
+        div.style.width = width + 'px';
+        div.style.height = height + 'px';
+        div.style.backgroundColor = backgroundColor;
+        document.body.appendChild(div);
+    }
+    createElement({ width: 60, height: 30, backgroundColor: "green" });
+</script>
+
+</html>

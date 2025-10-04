@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = {
+        name: '川',
+        lesson: {
+            title: 'javascript'
+        }
+    };
+    // let { name, lesson: { title } } = hd;//如果想解构子对象的属性，要把该属性的名字写上
+    // 也就相当于
+    let { title } = { title: 'javascript' }
+    console.log(title);
+</script>
+
+</html>

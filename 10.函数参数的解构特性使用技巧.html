@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 函数中的解构
+    // 1.数组形式
+    // function hd([name, age]) {//解构本质就是把结构打散赋值变量
+    //     console.log(name, age);
+    // }
+    // hd(['chuan', 19]);
+    // 2.对象形式
+    // function hd({ name, age }) {
+    //     console.log(name, age);
+    // }
+    // hd({ name: 'chuan', age: 19 });
+    // 3.部分解构
+    function hd(name, { sex, age }) {
+        console.log(name, sex, age);
+    }
+    hd('chuan', { sex: '男', age: 19 });
+</script>
+
+</html>
