@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.直接创建对象往里面加属性
+    // let xj = {};
+    // xj.name = "向军";
+    // xj.show = function (name) {
+    //     console.log(name);
+    // }
+    // 2.面向对象的封装
+    // function User(name, age) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.show = function (name) {
+    //         console.log(this.name + this.info);
+    //     }
+    //     this.info = function () {
+    //         return this.age > 50 ? '老年' : '青年';
+    //     }
+    // }
+    // let xj = new User('向军');
+    // xj.name = '后盾人';//可以在外部修改
+    // xj.show();//封装后，里面的东西还会被外部访问到
+
+    // 如果我们不想让外部访问和修改----也就是实现抽象
+    function User(name, age) {
+        let data = { name, age };//引入一个函数内部的变量，采用闭包特性让外部无法修改data
+        this.show = function () {
+            console.log(data.name + info());
+        }
+        let info = function () {
+            return data.age > 50 ? '老年' : '青年';
+        }
+    }
+    let xj = new User('向军');
+    xj.name = '后盾人';//外界无法改变了
+    xj.show();
+</script>
+
+</html>

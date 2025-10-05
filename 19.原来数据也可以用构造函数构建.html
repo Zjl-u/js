@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 创建对象
+    // 1.直接创建
+    // let o = {};
+    // console.log(o);
+    // 2.用Object创建
+    // let o = new Object();
+    // o.name = 'chuan';
+    // console.log(o);
+
+    // 创建数字
+    // let n = new Number(1);
+    // console.log(n.valueOf());//可以直接得到n的内容
+    // console.log(n + 3);//可以直接用来计算
+
+    // 创建字符串
+    // let s = new String('chuan');
+    // console.log(s.valueOf());//可以直接得到s的内容
+
+    // 创建布尔类型
+    // let b = new Boolean(true);
+    // console.log(b.toString());//转换成字符串
+    // console.log(b.valueOf());//可以直接得到b的内容
+
+    // 创建日期
+    // let d = new Date();
+    // console.log(d.valueOf());
+
+    // 创建正则表达式
+    // let r = new RegExp("\\d+");
+    // console.log(r.valueOf());//可以直接得到r的内容
+    // console.log(r.test('abc'));
+
+    // 创建函数
+    // 1.直接function创建
+    // function hd() { }
+    // console.log(hd.constructor);
+    // 2.new创建
+    let User = new Function('name', `this.name=name;
+    this.show=function(){
+    console.log(this.name+'是能通过构造函数Function创建的');
+    }`
+    )
+    let xj = new User('向军');
+    xj.show();
+</script>
+
+</html>

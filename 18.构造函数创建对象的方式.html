@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function User(name) {//构造函数名字首字母大写
+        this.name = name;
+        this.show = function () {
+            console.log(this.name);
+        }
+        // return this;//我们一般不用return this，因为系统会自动干
+    }
+    let xj = new User('向军');
+    console.log(xj);
+    xj.show();
+</script>
+
+</html>
