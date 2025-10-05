@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = {};
+    // let name = 'title';
+    // hd[name] = '川';
+    // console.log(hd.title);
+    // 相当于说name和title是一个东西
+
+    // 有时候需要对数据结构处理来改变数据
+    // let id = 0;
+    // let hd = {};
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // console.log(hd);
+
+    // 例子：把数组转换成对象，并且把内容标序号
+    // const lessons = [
+    //     {
+    //         title: "布局",
+    //         category: "css"
+    //     },
+    //     {
+    //         title: "模型",
+    //         category: "css"
+    //     },
+    //     {
+    //         title: "操作",
+    //         category: "mysql"
+    //     }
+    // ];
+    // let res = lessons.reduce((obj, cur, index) => {
+    //     obj[`${cur['category']}-${index + 1}`] = cur;
+    //     return obj;
+    // }, {});
+    // console.log(JSON.stringify(res, null, 2));
+
+    // Object知识
+    let hd = Object.assign({ a: 1 }, { b: 2 });
+    console.log(hd);
+    function upload(params) {
+        let options = {
+            size: 1999
+        }
+        options = Object.assign(options, params);
+        console.log(JSON.stringify(options, null, 2));
+    }
+    upload({ size: 99, type: 'jpeg' });
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = {
+    //     name: "川",
+    //     year: "2010"
+    // };
+    // console.log(Object.keys(hd));//获取所有属性的名字
+    // console.log(Object.values(hd));//获取所有属性的值
+    // console.log(Object.entries(hd));//获取所有属性的名字和值
+    // // JSON变成字符串
+    // console.log(JSON.stringify(Object.entries(hd), null, 2));
+
+    // 循环
+    // for (const key in hd) {//取里面的属性名
+    //     console.log(hd[key]);
+    // }
+    // let lessons = [
+    //     { name: 'js', click: 999 }//数组有迭代特性，所以可以用for of
+    // ]
+    // for (const element of lessons) {
+    //     console.log(element);
+    // }
+
+    let lessons = [
+        { name: 'js', click: 999 },
+        { name: 'node', click: 777 }
+    ]
+    let ul = document.createElement('ul');
+    for (const lesson of lessons) {
+        let li = document.createElement('li');
+        li.innerHTML = `课程:${lesson.name},点击数:${lesson.click}`;
+        ul.appendChild(li);
+    }
+    document.body.appendChild(ul);
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = { name: '川' };
+    // let cms = {
+    //     name:hd.name
+    // };
+    // cms.name = 'chuan';
+    // console.log(hd);//此时重新开辟了个内存空间，俩值不一起改变
+
+    // 如果值很多，就不方便用这个，来用循环
+    // let obj = {};
+    // for (const key in hd) {
+    //     obj[key] = hd[key];
+    // }
+    // console.log(hd);
+
+    // 除了用循环，也可以用提供的接口
+    // let obj = Object.assign({}, hd);
+    // console.log(obj);
+
+    // 点语法
+    let obj = { ...hd };
+    console.log(obj);
+</script>
+
+</html>

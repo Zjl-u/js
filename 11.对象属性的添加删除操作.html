@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 对象属性的添加
+    let hd = {};
+    hd.name = '川';
+    hd['age'] = 18;
+    console.log(hd);
+    // 对象属性的删除
+    delete hd.name;
+    console.log(hd);
+    // 检测是否含有某属性
+    console.log(hd.hasOwnProperty('age'));//有返回true，没有返回false
+</script>
+
+</html>
