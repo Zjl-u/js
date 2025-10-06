@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    // const user = {
+    //     name: 'le',
+    //     age: 18,
+    //     set name(value) {
+    //         console.log(value + '-lele');
+    //     }
+    // };
+    // user.name = 'hd';
+    // console.log(user);//普通属性和显示器同时定义name，最后显示访问器里的name，则访问器的优先级高
+
+    // 采用私有属性
+    // const user = {
+    //     data: { name },//定义私有属性
+    //     name: 'le',
+    //     age: 18,
+    //     set name(value) {
+    //         this.data.name = value;
+    //     },
+    //     get name() {
+    //         return this.data.name;
+    //     }
+    // };
+    // user.name = 'hd';
+    // console.log(user.name);
+    // console.log(user);//此时data也可以获取到
+    // user.data.name = 'hhh';
+    // console.log(user.name);//此时也能获取到里面的name
+    // 
+    const DATA = Symbol();
+    const user = {
+        [DATA]: { name },//定义私有属性
+        name: 'le',
+        age: 18,
+        set name(value) {
+            this[DATA].name = value;
+        },
+        get name() {
+            return this[DATA].name;
+        }
+    };
+    user.name = 'hd';
+    console.log(user.name);//获取到添加的name
+    // user.data.name = 'hhh';
+    // console.log(user.name);//想修改，但是报错了
+    console.log(user[Symbol()]);//获取不到里面的值
+</script>
+
+</html>

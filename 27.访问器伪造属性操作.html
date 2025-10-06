@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    let Lesson = {
+        lists: [
+            { name: 'js', price: 100 },
+            { name: 'mysql', price: 212 },
+            { name: 'vue.js', price: 98 }
+        ],
+        get total() {
+            return this.lists.reduce((t, l) => t + l.price, 0)
+        }
+    };
+    console.log(Lesson.total);
+    Lesson.total = 8998;
+    console.log(Lesson.total);//使用访问器访问属性，可以访问，但不能修改
+</script>
+
+</html>

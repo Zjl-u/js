@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    const web = {
+        name: 'le',
+        url: 'll',
+        get site() {
+            return `${this.name}的网址为${this.url}`;
+        },
+        set site(value) {
+            console.log(value);
+            [this.name, this.url] = value.split(',');
+        }
+    };
+    web.site = '1,4';
+    // console.log(web.name);
+    console.log(web.site); 
+</script>
+
+</html>
