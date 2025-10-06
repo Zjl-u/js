@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    const user = {
+        name: '川',
+        age: 18
+    };
+    Object.preventExtensions(user);//锁定操作--对对象进行修饰
+    user.site = 'chuan';
+    console.log(user);//此时并未成功添加
+</script>
+
+</html>

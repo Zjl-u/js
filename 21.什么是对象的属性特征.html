@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // const user = {
+    //     name: '川',
+    //     age: 19
+    // };
+    // user.lesson = 'js';//可以给对象增添属性
+    // console.log(user);
+    // delete user.lesson;//删除属性
+    // console.log(user);
+
+    // let arr = ['chuan', 'le'];
+    // // console.log(arr);
+    // for (const [key, value] of Object.entries(arr)) {
+    //     console.log(key, value);//遍历的时候，遍历不出来长度
+    // }
+
+    const user = {
+        name: '川',
+        age: 19
+    };
+
+    //获取一个属性的属性特征
+    console.log(
+        JSON.stringify(Object.getOwnPropertyDescriptor(user, 'name'), null, 2)//可以打印出属性特征，显示true的表示可以修改和遍历以及重新配置
+    );
+    //获取所有属性的属性特征
+    console.log(
+        JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+    );
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    const user = {
+        name: 'le',
+        age: 18
+    };
+    Object.freeze(user);//冻结对象--此时不能被修改
+    console.log(
+        JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+    );
+    // user.site = 'll';//不能添加属性
+    // delete user.name;//不能删除属性
+    // user.name = 'll';//不能修改属性
+    console.log(Object.isFrozen(user));//判断是否冻结，true是冻结，false是未冻结
+
+</script>
+
+</html>

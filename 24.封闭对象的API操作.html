@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    const user = {
+        name: '川',
+        age: 18
+    };
+    Object.seal(user);//封闭对象
+    console.log(Object.isSealed(user));//为true就是处于封闭状态，为false就是处于未封闭状态
+    console.log(
+        JSON.stringify(
+            Object.getOwnPropertyDescriptors(user), null, 2
+        )
+    )
+    user.site = 'le';//封闭后也不能添加属性了
+    delete user.name;//也不能删除属性
+
+    // 那么可以根据这个来修改对象
+    if (!Object.isSealed(user)) {
+        user.site = 'le';
+        delete user.name;
+    }
+    console.log(user);
+</script>
+
+</html>

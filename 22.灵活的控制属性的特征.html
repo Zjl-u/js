@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.配置一个属性特征
+    const user = {
+        name: '川',
+        age: 18
+    };
+    console.log(
+        JSON.stringify(Object.getOwnPropertyDescriptor(user, 'age'), null, 2)
+    );
+    // Object.defineProperty(user, 'name', {//修改or新增属性特征
+    //     value: 'chuan',
+    //     writable: false,//修改成false后不可写，也就是不可修改
+    //     enumberable: false,//修改成false后不可遍历
+    //     configurable: true//修改成false后不可删除，连重新配置也不可以
+    // });
+    // user.name = '1';
+    // console.log(user.name);//此时显示未修改的值
+    // console.log(Object.keys(user));//此时拿不到name
+    // delete user.name;
+    // console.log(user);//此时未删除name
+
+    // 2.批量配置属性特征
+    Object.defineProperys(user, {
+        name: {
+            value: 'chuan',
+            writable: false,
+            enumberable: false,
+            configurable: true
+        },
+        age: {
+            value: 'chuan',
+            writable: false,//修改成false后不可写，也就是不可修改
+            enumberable: false,//修改成false后不可遍历
+            configurable: true
+        }
+    })
+</script>
+
+</html>
