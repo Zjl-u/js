@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    const hd = { name: '川川' };
+    const proxy = new Proxy(hd, {
+        get(obj, property) {//获取
+            // console.log(property);
+            return obj[property];
+        },
+        set(obj, property, value) {
+            obj[property] = value;
+            return true;
+        }
+    });
+    console.log(proxy.name);
+    proxy.name = '向军';
+    console.log(proxy.name);
+    console.log(proxy);
+
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const lessons = [
+        {
+            title: '布局',
+            category: 'css'
+        },
+        {
+            title: '模型',
+            category: 'css'
+        },
+        {
+            title: '操作',
+            category: 'mysql'
+        }
+    ];
+    let proxy = new Proxy(lessons, {
+        get(array, key) {
+            const title = array[key].title;
+            const len = 5;
+            array[key].title = title.length > len ? title.substr(0, len) + '.'.repeat(3) : title;
+            return array[key];
+        }
+    })
+    console.log(
+        JSON.stringify(proxy[2], null, 2)
+    );
+</script>
+
+</html>

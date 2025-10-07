@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    // 1.正常函数
+    // function User(name, age) {
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // let xj = new User('向军', 19);
+    // xj.name = 'xx';
+    // console.log(xj);//此时可以从外部改变
+
+    // 2.访问器
+    // function User(name, age) {
+    //     let data = { name, age };
+    //     Object.defineProperties(this, {
+    //         name: {
+    //             get() {
+    //                 return data.name;
+    //             },
+    //             set(value) {
+    //                 if (value.trim() == '' || value.length > 20) {
+    //                     throw new Error('用户名不合法');
+    //                 }
+    //                 data.name = value;
+    //             }
+    //         },
+    //         age: {
+    //             get() {
+    //                 return data.age;
+    //             },
+    //             set(value) {
+    //                 data.age = value;
+    //             }
+    //         }
+    //     })
+    // }
+    // let xj = new User('向军', 19);
+    // xj.name = 'xx';
+    // console.log(xj);
+
+    // 3.类:class语法糖
+    // class User {//另一种构造函数简写形式
+    //     constructor(name, age) {
+    //         this.data = { name, age };
+    //     }
+    //     get name() {
+    //         return this.data.name;
+    //     }
+    //     set name(value) {
+    //         if (value.trim() == '' || value.length > 20) {
+    //             throw new Error('用户名不合法');
+    //         }
+    //         this.data.name = value;
+    //     }
+    //     get age() {
+    //         return this.data.age;
+    //     }
+    //     set age(value) {
+    //         this.data.age = value;
+    //     }
+    // }
+    // let xj = new User('向军', 19);
+    // xj.name = 'xx';
+    // console.log(xj);
+
+    // 如果要让data私有
+    // 定义一个Symbol常量
+    const DATA = Symbol();
+    class User {
+        constructor(name, age) {
+            this[DATA] = { name, age };
+        }
+        get name() {
+            return this[DATA].name;
+        }
+        set name(value) {
+            if (value.trim() == '' || value.length > 20) {
+                throw new Error('用户名不合法');
+            }
+            this[DATA].name = value;
+        }
+        get age() {
+            return this[DATA].age;
+        }
+        set age(value) {
+            this[DATA].age = value;
+        }
+    }
+    let xj = new User('向军', 19);
+    xj.name = 'xx';
+    console.log(xj);
+</script>
+
+</html>
