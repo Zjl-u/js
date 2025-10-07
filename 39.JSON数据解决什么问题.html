@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let data = {
+        name: '川川',
+        data: {
+            title: 'php'
+        }
+    };
+    // let json = JSON.stringify(data, null, 2);
+    // console.log(json);//把对象转换成JSON
+
+    // let phpJSon = `{"name":"\u540e\u76fe\u4eba","url":"hdcms.com"}`;
+    // console.log(JSON.parse(phpJSon));//php转换成JSON
+
+    let lessons = [
+        { name: 'js' }
+    ]
+    let json = JSON.stringify(lessons, null, 2);
+    console.log(json);//把数组转换成JSON
+</script>
+
+</html>

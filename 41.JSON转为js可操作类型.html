@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = {
+        title: 'cc',
+        url: 'll',
+        teacher: {
+            name: '川川'
+        }
+    };
+    let json = JSON.stringify(hd, null, 2);
+    console.log(json);
+    let obj = JSON.parse(json, (key, value) => {
+        if (key == 'title') {
+            value = '[lele]-' + value;
+        }
+        return value;
+    });//JSON转换成js,第二个参数可以对接收来的JSON改变
+    console.log(obj);
+</script>
+
+</html>

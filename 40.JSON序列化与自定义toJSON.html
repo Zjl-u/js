@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // // 对象转换成JSON
+    // let hd = {
+    //     title: '川川',
+    //     url: 'cc',
+    //     teacher: {
+    //         name: 'lele'
+    //     }
+    // }
+    // let json = JSON.stringify(hd, ['title', 'url'], 2);//第二个参数表示你要保留哪个参数表示格式滞留位
+    // console.log(json);
+
+    // // 数组转换成JSON
+    // let arr = ['cc', 'll'];
+    // let arrJson = JSON.stringify(arr, ['title', 'url'], 2);//第二个参数表示你要保留哪个参数表示格式滞留位
+    // console.log(arrJson);
+
+    // 自定义返回JSON
+    let hd = {
+        title: '川川',
+        url: 'cc',
+        teacher: {
+            name: 'lele'
+        },
+        toJSON: function () {
+            return {
+                title: this.title,
+                teacher: this.teacher.name
+            }
+        }
+    };
+    let json = JSON.stringify(hd);
+    console.log(json);
+</script>
+
+</html>
