@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>川川</button>
+</body>
+<script>
+    // // 1.全局的环境不会被回收，除非把浏览器关掉
+    // let title = 'cc';
+    // function hd() {
+    //     alert(title);
+    // }//js里的变量不会自动清除，因为可能担心后面还会用
+    // document.querySelector('button').addEventListener('click', hd); 
+
+    // 全局变量的作用域：该html文件里全部有效
+    let title = 'cc';
+    function show() {
+        console.log(title);
+    }
+    show();
+</script>
+
+</html>

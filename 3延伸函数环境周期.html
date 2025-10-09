@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function hd() {
+    //     let n = 1;
+    //     function sum() {
+    //         console.log(++n);
+    //     }
+    // }
+    // 我们不断调用hd函数，只会开辟新空间，如果想让n累加，需要把hd里的变量保留下来
+    // 我们返回函数sum
+    // function hd() {
+    //     let n = 1;
+    //     return function sum() {
+    //         console.log(++n);
+    //     }
+    // }
+    // let a = hd();
+    // a();
+    // a();
+
+    // 
+    function hd() {
+        let n = 1;
+        return function sum() {
+            let m = 1;
+            return function show() {
+                console.log(++m);
+            }
+            show();
+        }
+    }
+    let a = hd();
+    a();
+    a();
+</script>
+
+</html>
