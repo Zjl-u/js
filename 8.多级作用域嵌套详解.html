@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let arr = [];
+    // // var
+    // for (var i = 1; i <= 3; i++) {
+    //     arr.push(function () {
+    //         return i;
+    //     });
+    // }
+    // console.log(arr[0]());//只能打印出4
+    // 如果想正常打印i
+    for (var i = 1; i <= 3; i++) {
+        (function (i) {
+            arr.push(function () {
+                return i;
+            })
+        })(i);
+    }
+    console.log(arr[1]());
+
+    // var
+    // for (let i = 1; i <= 3; i++) {
+    //     arr.push(function () {
+    //         return i;
+    //     });
+    // }
+    // console.log(arr[0]());
+
+
+</script>
+
+</html>

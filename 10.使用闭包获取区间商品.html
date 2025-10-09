@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 获取某个区间的数
+    let arr = [1, 4, 3, 13, 235, 21, 7];
+    // let hd = arr.filter(function (v) {
+    //     return v >= 2 && v <= 9;
+    // })
+    // console.log(hd);
+    // 但是这个方法换区间要重写一下
+
+    // 把它封装成一个函数
+    function between(a, b) {
+        return function (v) {
+            return v >= a && v <= b;
+        }
+    }
+    console.log(arr.filter(between(3, 9)));
+</script>
+
+</html>
