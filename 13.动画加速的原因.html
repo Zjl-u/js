@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <button message="chuan">川川</button>
+    <button message="le">le</button>
+</body>
+<script>
+    // let btns = document.querySelectorAll('button');
+    // btns.forEach(function (item) {
+    //     let left = 1;
+    //     let interval = false;
+    //     item.addEventListener('click', function () {
+    //         if (!interval) {
+    //             interval = true;
+    //             setInterval(function () {
+    //                 item.style.left = left++ + 'px';
+    //             }, 100)
+    //         }
+
+    //     })
+    // })
+    // 加速原因是每点击就产生一个定时器，它们会叠加，让它只开一个定时器即可
+
+    // 如果不想让代码污染全局
+    let btns = document.querySelectorAll('button');
+    btns.forEach(function (item) {
+        // let left = 1;
+        // let interval = false;
+        let bind = false;
+        item.addEventListener('click', function () {
+            if (!bind) {
+                bind = true;
+                left = 1;
+                interval = true;
+                setInterval(function () {
+                    item.style.left = left++ + 'px';
+                }, 100)
+            }
+
+        })
+    })
+</script>
+
+</html>

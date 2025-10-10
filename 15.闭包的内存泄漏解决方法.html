@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div desc="chuan">学习</div>
+    <div desc="cc">产品</div>
+
+</body>
+<script>
+    // let divs = document.querySelectorAll('div');
+    // divs.forEach(function (item) {
+    //     item.addEventListener('click', function () {
+    //         console.log(item.getAttribute('desc'));
+    //         console.log(item);//会把父级整个都存储，会浪费空间
+    //     })
+    // })
+
+    // 解决方法
+    let divs = document.querySelectorAll('div');
+    divs.forEach(function (item) {
+        let desc = item.getAttribute('desc');
+        item.addEventListener('click', function () {
+            // console.log(item.getAttribute('desc'));
+            console.log(desc);
+        })
+        item = null;
+    })
+</script>
+
+</html>

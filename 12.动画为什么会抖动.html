@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <button message="chuan">川川</button>
+    <button message="le">le</button>
+</body>
+<script>
+    let btns = document.querySelectorAll('button');
+    btns.forEach(function (item) {
+        let left = 1;
+        item.addEventListener('click', function () {
+
+            setInterval(function () {
+                item.style.left = left++ + 'px';
+            }, 100)
+        })//因为每点击一次都会产生新环境，都会把left置1，要解决的话，把left定义在函数外面
+        // 但是多次点会越来越快
+    })
+</script>
+
+</html>
