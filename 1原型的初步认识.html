@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let arr = ['cc'];
+    // console.log(arr.concat('le'));//给数组添加内容
+    // 数组没有这个方法，用的是它父亲的--啃老
+
+    // 原型链其实就是“族谱”
+    let hd = {};
+    console.log(Object.getPrototypeOf(hd));//获取原型
+    let cc = {};
+    console.log(Object.getPrototypeOf(hd) == Object.getPrototypeOf(cc));//它俩父亲一样
+</script>
+
+</html>

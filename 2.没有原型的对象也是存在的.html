@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let xj = { name: 'lele' };
+    console.log(xj.hasOwnProperty('name'));//判断它的属性
+
+    let hd = Object.create(null, {
+        name: {
+            value: 'cc'
+        }
+    })
+    console.log(hd);//这样创建的对象没有原型，但很少用
+</script>
+
+</html>

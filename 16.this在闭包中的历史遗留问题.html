@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = {
+    //     user: 'cc',
+    //     get: function () {
+    //         // return this.user;//this指向hd对象
+    //         return function () {
+    //             this.user;
+    //         }
+    //     }
+    // }
+    // let a = hd.get();//此时this指向的hd对象
+    // console.log(a());//this指向所在环境的父级，a在全局环境里面，也就指向window
+
+    // 解决方法--1.把this赋值给普通变量
+    // let hd = {
+    //     user: 'cc',
+    //     get: function () {
+    //         let This = this;
+    //         return function () {
+    //             return This.user;
+    //         }
+    //     }
+    // }
+    // let a = hd.get();
+    // console.log(a());
+
+    // 2.箭头函数
+    let hd = {
+        user: 'cc',
+        get: function () {
+            let This = this;
+            return () => {
+                return This.user;
+            }
+        }
+    }
+    let a = hd.get();
+    console.log(a());
+</script>
+
+</html>

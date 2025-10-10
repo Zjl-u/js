@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function User() { }
+    console.dir(User);//打印详细结构,发现有俩长辈
+
+    // 作为构造函数时
+    // let hd=new User();
+    // hd.show();//此时报错
+
+    // 但可以给另一个长辈加上这个方法
+    // User.prototype.show = function () {
+    //     console.log('cc');
+    // }
+    // let hd = new User();//可以正常执行
+    // console.log(User.prototype == hd.__proto__);//它俩一个原型
+</script>
+
+</html>

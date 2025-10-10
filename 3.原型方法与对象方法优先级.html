@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = {};
+    // console.log(hd.__proto__);//找到它的原型
+    // console.dir(hd.__proto__);//结构更清楚
+
+    // 1.自己有的方法
+    // let hd = {
+    //     show() {
+    //         console.log('cc');
+    //     }
+    // };
+    // hd.show();
+
+    // 2.自己和原型都没有的方法
+    // let hd = {
+    //     show() {
+    //         console.log('cc');
+    //     }
+    // };
+    // hd.rebder();//此时会报错
+
+    // 我们可以给原型添加这个方法
+    // let hd = {
+    //     show() {
+    //         console.log('cc');
+    //     }
+    // };
+    // hd.__proto__.render = function () {
+    //     console.log('chuan');
+    // }
+    // hd.render();
+
+    // 3.自己和原型都有方法，优先执行自己的方法（自己有钱就不用问家长要了
+    let hd = {
+        show() {
+            console.log('cc');
+        },
+        render() {
+            console.log('hd . render')
+        }
+    };
+    console.log(hd);
+    hd.__proto__.render = function () {
+        console.log('chuan');
+    }
+    hd.render();
+</script>
+
+</html>
