@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function User(name) {
+        this.name = name;
+    }
+
+    // console.dir(User);
+    // console.log(User.prototype.__proto__ == Object.prototype);
+    // console.log(User.prototype.constructor == User);
+    // // constructor相当于从原型往回走
+    // let lisi = new User.prototype.constructor('李四');//所以也可以返回来创建函数，相当于User('李四')
+    // console.log(lisi);
+
+    // User.prototype.show = function () {
+    //     console.log(this.name);
+    // };
+    // console.log(User);
+
+    // 还能改变定义形式
+    // User.prototype = {
+    //     show() {
+    //         console.log(this.name);
+    //     }
+    // }
+    // let lisi = new User.prototype.constructor('李四');
+    // lisi.show();//这时候报错了，因为这个形式相当于新建了一个对象，里面不含constructor方法
+    // 如果想用这个方法，就要重新写constructor
+    User.prototype = {
+        constructor: User,//constructor是谁就写谁
+        show() {
+            console.log(this.name);
+        }
+    }
+    let lisi = new User.prototype.constructor('李四');
+    lisi.show();
+</script>
+
+</html>

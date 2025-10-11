@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = { name: 'hd' };
+    let parent = {
+        name: 'parent',
+        show() {
+            console.log('parent method:' + this.name)
+        }
+    };
+    // console.log(hd.__proto__ == Object.prototype);
+    Object.setPrototypeOf(hd, parent);//自定义原型
+    // hd.show()
+    // parent.show()
+    console.log(Object.getPrototypeOf(hd));//获取原型
+</script>
+
+</html>

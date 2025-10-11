@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = new Object();
+    hd.name = 'cc';
+    // console.dir(Object);
+    Object.prototype.show = function () {
+        console.log('chuan');
+    }
+    // hd.show();
+    function User() { }
+    console.log(User);
+    //                                              |————》__proto__
+    //                                      Object————|
+    // User——》User.__proto__(服务自己的原型)——————》Object.prototype————》null
+    //  |——》prototype——————————————————————————————————|
+</script>
+
+</html>
