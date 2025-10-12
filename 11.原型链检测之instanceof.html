@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // instanceof用来检测构造函数的prototype原型链上有没有这个的，有返回true，没有返回false
+    function A() { }
+    function B() { }
+    function C() { }
+    let c = new C();
+    B.prototype = c;
+    let b = new B();
+    A.prototype = b;
+    let a = new A();
+    console.log(a instanceof B);
+    console.log(a instanceof A);
+    console.log(a instanceof C);
+    console.log(b instanceof A);
+
+</script>
+
+</html>

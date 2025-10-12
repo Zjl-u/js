@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let arr = [];
+    // console.log(arr.__proto__);//非标准
+    // console.log(Object.getPrototypeOf);//标准的获取原型
+    // console.log(arr.__proto__ == Object.prototype);
+
+    let a = { name: 'a' };
+    let b = {
+        name: 'b',
+        show() {
+            console.log(this.name);
+        },
+        view() {
+            console.log('view method');
+        }
+    };
+    let c = { name: 'c' };
+    Object.setPrototypeOf(a, b);
+    Object.setPrototypeOf(c, b);
+    a.show();
+    c.show();
+    a.view();
+    c.view();
+</script>
+
+</html>

@@ -13,7 +13,9 @@
 <script>
     function User(name) {
         this.name = name;
-        this.show = function ()
+        this.show = function () {
+            console.log(this.name);
+        }
     }
     let hd = new User('hd');
     function createByObject(obj, ...args) {
@@ -22,6 +24,7 @@
         return new constructor(...args);
     }
     let xj = createByObject(hd, 'xj');
+    xj.show();
 </script>
 
 </html>
