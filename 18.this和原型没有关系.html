@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = {
+    //     name: 'chuan', show() {
+    //         console.log(this.name);
+    //     }
+    // };
+
+    // Object.setPrototypeOf(hd, {});//把hd的原型改成任意一个对象都不改变this.name
+    // console.log(hd.show());
+
+    let hd = {
+        name: 'chuan',
+        show() {
+            console.log(this.name);
+        }//show在hd还是User里，不影响hd使用show
+    };
+    let User = {
+        name: 'cc'
+    }
+    Object.setPrototypeOf(hd, User);
+    console.log(hd);
+</script>
+
+</html>

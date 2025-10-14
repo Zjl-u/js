@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let user = {
+        show() {
+            return this.name;
+        }
+    }
+    //prototype主要定义构造函数的原型，构造函数创建的所有对象都可以用原型里面的属性
+
+    // 为单个对象更改原型
+    // 1.
+    // let hd = Object.create(user);//把hd的原型换成了user
+    // hd.name = 'cc';
+    // console.log(hd.show());
+
+    // 2.只是定义对象的原型，不能获取
+    // let hd = Object.create(user, {
+    //     name: {
+    //         value: 'chuan'
+    //     }
+    // });
+    // console.log(hd.show());
+
+    // 3.
+    let hd = { name: 'chuan' }
+    hd.__proto__ = user;//__proto__  有原型修改原型，没原型设置原型
+    console.log(hd.show());
+    console.log(hd.__proto__);//能获取原型
+
+</script>
+
+</html>

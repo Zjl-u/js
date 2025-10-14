@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function User(name) {
+    //     this.name = name;
+    // }
+    // User.prototype.show = function () {
+    //     console.log(this.name);
+    // }
+    // let lisi = new User('李四');
+    // let xj = new User('cc');
+    // lisi.show();
+    // xj.show();
+
+    // 把方法写在原型里省空间
+
+    // 如果方法太多，我们可以把原型定义成一个对象
+    function User(name) {
+        this.name = name;
+    };
+    User.prototype = {
+        constructor: User,//因为新构建的protot对象里不含construct，要手动加上
+        show() {
+            console.log(this.name);
+        },
+        get() {
+            console.log('get...');
+        }
+    }
+    let lisi = new User('李四');
+    let xj = new User('cc');
+    lisi.show();
+    xj.show();
+
+
+</script>
+
+</html>
