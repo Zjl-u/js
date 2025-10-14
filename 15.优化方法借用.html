@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // apply
+    // let hd = {
+    //     data: [1, 2, 3, 54, 6, 7, 4]
+    // };
+    // console.log(Math.max.apply(null, hd.data));//传多个参数用apply,相当于分散传参，而call会直接把数组作为一个参数传进去
+
+    // let xj = {
+    //     lessons: { js: 87, php: 23, node: 99, linux: 100 },
+    // }
+
+    // console.log(Math.max.apply(null, Object.values(xj.lessons)));
+
+    // call
+    let arr = [13, 2352, 123, 98];
+    console.log(Math.max(...arr));
+    let hd = {
+        data: [1, 2, 3, 54, 6, 7, 4]
+    };
+
+    console.log(Math.max.call(...hd.data));
+
+    let xj = {
+        lessons: { js: 87, php: 23, node: 99, linux: 100 },
+    }
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button message="cc" class="red">chuan</button>
+    <button message="le">lele</button>
+
+</body>
+<script>
+    let arr = [1, 2, 42];
+    let res = arr.filter(item => {
+        return item > 8;
+    });
+    // console.dir(Array);
+    console.log(res);
+    let btns = document.querySelectorAll('button');
+    btns = [].filter.call(btns, item => {
+        return item.hasAttribute('class');
+    })
+    console.log(btns);
+</script>
+
+</html>
