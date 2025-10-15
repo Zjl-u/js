@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function User() { };
+    User.prototype.name = function () {
+        console.log('user.name');
+    }
+    User.prototype.site = function () {
+        return 'chuan';
+    }
+    function Admin() { }
+
+
+    Admin.prototype = Object.create(User.prototype);
+    Admin.prototype.constructor = Admin;
+    let hd = new Admin();
+    // hd.show();//如果觉得父级show不好用，想改变，可以在自己原型上重新定义
+    Admin.prototype.show = function () {
+        // 如果想用原型链里面的方法--直接调用
+        // User.prototype.site();
+        console.log('admin.show');
+    }
+    hd.show();
+
+
+
+</script>
+
+</html>
