@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 把方法定义进原型里，省内存
+    function User() { };
+    User.prototype.name = function () {
+        console.log('user.name');
+    }
+    // let hd = new User();
+    // hd.name();
+
+    function Admin() { }
+    Admin.prototype = User.prototype;
+    Admin.prototype.role = function () {
+        console.log('admin.role');//获取角色的方法
+    }
+
+    function Member() { }
+    Member.prototype = User.prototype;
+    let a = new Member();
+    a.role();
+    // 这种操作是放弃原本的原型，共用别人的原型去了
+    // 这个不叫继承，继承是既能保证自己原来的原型，还能用别人的原型
+</script>
+
+</html>

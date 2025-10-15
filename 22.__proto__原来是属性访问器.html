@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = { name: 'cc' };
+    // hd.__proto__ = {
+    //     show() {
+    //         console.log(this.name)
+    //     }
+    // };
+    // hd.__proto__ = 90;//把__proto__的值换了，但还能用show
+    // hd.show();
+
+    // let hd={
+    //     anction:{},
+    //     proto:null
+    // }
+    // hd.proto='123';
+    // console.log(hd.proto);//这时候能正常打印
+
+    // 如果想要换成对象
+    // let hd = {
+    //     action: {},
+    //     get proto() {
+    //         return this.action;
+    //     },
+    //     set proto(obj) {
+    //         if (obj instanceof Object) {
+    //             this.action = obj;
+    //         }
+    //     }
+    // }
+    // hd.proto = { view: function () { } };//只有定义对象才能传进去
+    // hd.proto = '123';//字符串传不进去
+    // console.log(hd.proto);
+
+    // 如果硬要用这个方法改原型呢，把原型设成null即可
+    let hd = Object.create(null);
+    hd.__proto__ = 90;
+    console.dir(hd.__proto__);
+</script>
+
+</html>

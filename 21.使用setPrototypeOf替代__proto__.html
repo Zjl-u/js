@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let user = {
+        show() {
+            return this.name;
+        }
+    }
+    let hd = { name: 'cc' };
+    // 非标准__proto__
+    // hd.__proto__ = user;
+    // console.log(hd.__proto__);
+
+    //标准serPrototypeOf
+    Object.setPrototypeOf(hd, user);
+    console.log(hd.show());
+    console.log(Object.getPrototypeOf(hd));//获取原型
+</script>
+
+</html>
