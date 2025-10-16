@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav>chuan</nav>
+        <section>1</section>
+        <section>2</section>
+    </main>
+    <main class="tab2">
+        <nav>
+            <a href="javascript:;">cc</a>
+            <a href="javascript:;">chuan</a>
+        </nav>
+        <section>1</section>
+        <section>2</section>
+    </main>
+
+</body>
+<script>
+    function extend(sub, sup) {
+        sub.prototype = Object.create(sup.prototype);
+        sub.prototype.constructor = sub;
+    }
+    function Animation() { }
+    Animation.prototype.show = function () {
+        this.style.display = 'block';
+    }
+    Animation.prototype.hide = function () {
+        this.style.display = 'none';
+    }
+    Animation.prototype.background = function (color) {
+        this.style.backgroundColor = color;
+    }
+    let tab = document.querySelector('.tab2');
+    Animation.prototype.background.call(tab, 'red');
+</script>
+
+</html>
