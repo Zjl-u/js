@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.普通函数    不在严格模式，this指向windows，严格模式下是undefind
+    // "use strict"
+    // function show() {
+    //     console.log(this);
+    // }
+    // show();
+
+    // 2.对象原型构造函数里嵌套普通函数    不在严格模式，this指向windows，严格模式下是undefind
+    // "use strict"
+    // function User() { }
+    // User.prototype.show = function () {
+    //     function test() {
+    //         console.log(this);
+    //     }
+    //     test();
+    // }
+    // let u = new User;
+    // u.show();
+
+    // 3.class       不在严格模式，this已经是undefind
+    // "use strict"
+    class Hd {
+        show() {
+            function test() {
+                console.log(this);
+            }
+            test();
+        }
+    }
+    let hd = new Hd();
+    hd.show();
+</script>
+
+</html>

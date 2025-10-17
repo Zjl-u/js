@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function User() {
+    //     this.show = function () { }//this指的是由User构建的新对象
+    // }
+    // let hd = new User();
+    // console.log(hd);
+
+    // 不建议这样写
+    // function User() {}
+    // User.prototype.show = function () {
+    //     console.log('prototypeof.show');
+    // }
+    // // let hd = new User();
+    // // console.log(hd);
+    // User.__proto__.show = function () {
+    //     // console.log('static.show');//这样定义的方法就是静态方法--直接将方法定义到函数身上了
+    //     console.log(this == User);
+    // }
+    // // console.dir(User);
+    // User.show();
+
+    // 在class里的使用
+    // class User {
+    //     show() {
+    //         console.log('prototype.show');
+    //     }
+    //     static show = function () {
+    //         console.log('static.show');
+    //     }
+    // }
+    // console.dir(User);
+    // User.show();
+    // let hd = new User();
+    // console.log(hd);
+    // hd.show();
+
+    // 例子
+    class Member {
+        constructor(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        static create(...args) {
+            return new this(...args);
+        }
+    }
+    let xj = Member.create('cc', 19);
+    console.log(xj);
+</script>
+
+</html>

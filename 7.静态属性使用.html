@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.函数中的静态属性
+    // function Web(url) {
+    //     this.url = url;
+    // }
+    // Web.url = 'chuan';//为构造函数构建的属性叫静态属性
+    // let hd = new Web('cc');
+    // console.log(hd);//获取对象属性
+    // console.log(Web);
+
+    // 2.class中的静态属性
+    // class Request {
+    //     host = 'chuan'
+    // }
+    // let obj1 = new Request();
+    // console.log(obj1);
+    // let obj2 = new Request();
+    // obj1.host = 'cc';
+    // console.log(obj2);//obj1 host的改变不会影响obj2的host
+    // // 静态属性
+    class Request {
+        static host = 'chuan'//设置成静态属性--能给所有对象使用
+        api(url) {
+            return Request.host + `/${url}`;
+        }
+    }
+    let obj = new Request();
+    console.log(obj.api('article'));
+</script>
+
+</html>
