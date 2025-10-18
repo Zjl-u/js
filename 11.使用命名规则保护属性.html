@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class User {
+        // public
+        site = 'lele'
+        constructor(name) {
+            this.name = name;
+        }
+        // 属性保护
+        // 1.命名规则保护 --约定前面加上下划线就不去改它
+        _url = "https://baidu.com";
+        set url(url) {
+            if (!/^https?:/i.test(url)) {
+                throw new Error('非常网址');
+            }
+            this._url = url;
+        }
+    }
+    let hd = new User('chuan');
+    hd.name = 'cc';
+    hd.url = 'https://baidu';
+    console.log(hd);
+</script>
+
+</html>

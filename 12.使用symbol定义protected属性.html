@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const protecteds = Symbol('主机');
+    class Common {
+        // [HOST] = 'lele'
+        constructor() {
+            this[protecteds] = {}
+            this[protecteds].host = 'lele'
+        }
+        set url(url) {
+            if (!/^https?:/i.test(url)) {
+                throw new Error('非常网址');
+            }
+            this[protecteds].host = url;
+        }
+        get host() {
+            return this[protecteds].host;
+        }
+    }
+    class User extends Common {
+        constructor(name) {
+            super();
+            this[protecteds].name = name;
+        }
+        get name() {
+            return this[protecteds].name;
+        }
+    }
+    let hd = new User('chuan');
+    hd.host = "http://baidu";
+    console.log(hd.name);
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const host = new WeakMap();
+    class User {
+        constructor(name) {
+            this.name = name;
+            host.set(this, 'https://baidu');
+        }
+        set url(url) {
+            if (!/^https?:/i.test(url)) {
+                throw new Error('非常网址');
+            }
+            host.set(this, url);
+        }
+        get host() {
+            return host.get(this);
+        }
+    }
+    let hd = new User('chuan');
+    console.log(hd.host);
+    let xj = new User('cc');
+    xj.host = 'https://www';
+    console.log(xj.host())
+</script>
+
+</html>
