@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Common {
+        #check = () => {//方法前面加上#表示私有方法
+            if (this.name.length < 5) {
+                throw new Error('名字长度不能小于五位');
+            }
+            return true;
+        }
+        // 父类的私有方法只能父类自己用
+    }
+    class User {
+        #host = 'https://baidu'//属性前面加上#表示私有属性
+        constructor(name) {
+            this.name = name;
+            this.check(name);
+        }
+        set host(url) {
+            if (!/^https?:/i.test(url)) {
+                throw new Error('非常网址');
+            }
+            this.#host = url;
+        }
+
+    }
+    let hd = new User('chuan');
+    // hd.#host = 'https://www.hd';//私有属性无法改变，会报错
+    hd.host = 'https://www.hd';
+    // hd.#check();//私有方法在外部不能调用
+    console.log(hd);
+</script>
+
+</html>

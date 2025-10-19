@@ -11,27 +11,39 @@
 
 </body>
 <script>
-    const host = new WeakMap();
-    class User {
-        constructor(name) {
-            this.name = name;
-            host.set(this, 'https://baidu');
+    const protecteds = new WeakMap();
+    class Common {
+        constructor() {
+            protecteds.set(this, {
+                host: "'https://baidu'"
+            });
         }
-        set url(url) {
+        set host(url) {
             if (!/^https?:/i.test(url)) {
                 throw new Error('非常网址');
             }
-            host.set(this, url);
+            protecteds.set(this, { ...protecteds.get(this), url });
         }
         get host() {
-            return host.get(this);
+            return protecteds.get(this)['host'];
+        }
+    }
+
+    class User extends Common {
+        constructor(name) {
+            super();//使用继承要用super
+            this.name = name;
+        }
+        set name(name) {
+            protecteds.set(this, { ...protecteds.get(this), name });
+        }
+        get name() {
+            protecteds.get(this)['name'];
         }
     }
     let hd = new User('chuan');
-    console.log(hd.host);
-    let xj = new User('cc');
-    xj.host = 'https://www';
-    console.log(xj.host())
+    hd.name = 'cc';
+    console.log(hd);
 </script>
 
 </html>
