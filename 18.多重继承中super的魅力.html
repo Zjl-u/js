@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let common = {
+    //     show() {
+    //         console.log('common.show');
+    //     }
+    // }
+    // let hd = {
+    //     __proto__: common,
+    //     name: 'hd.name',
+    //     show() {
+    //         this.__proto__.show.call(this);//此时this扮演的角色太多，程序错误了
+    //     }
+    // }
+    // let xj = {
+    //     __proto__: hd,
+    //     name: 'xj.name',
+    //     show() {
+    //         this.__proto__.show.call(this);
+    //     }
+    // }
+    // xj.show();
+
+    let common = {
+        show() {
+            console.log('common.show' + this.name);
+        }
+    }
+    let hd = {
+        __proto__: common,
+        name: 'hd.name',
+        show() {
+            super.show();
+            // this.__proto__.show.call(this);
+        }
+    }
+    let xj = {
+        __proto__: hd,
+        name: 'xj.name',
+        show: function () {
+            // super.show();//声明成函数时，不能使用super
+            // this.__proto__.show.call(this);
+        }
+    }
+    xj.show();
+</script>
+
+</html>
