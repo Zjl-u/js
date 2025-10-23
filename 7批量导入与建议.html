@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script type="module">
+    import * as api from './7.1.js';//想批量导出时使用* as
+    console.log(api);//储存的是输出的接口
+    console.log(api.hd);//现在要输出东西，需要加上总接口这个前缀
+    console.log(api.show());
+    console.log(api.User.render());
+
+    //不过更推荐使用具名导入
+</script>
+
+</html>

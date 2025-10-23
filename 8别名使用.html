@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script type="module">
+    // import { site as s } from './8.1.js';//可以改变模块接口的名字
+    // import { hd } from './8.1.js';//在模块内部改变接口的名字，在外部使用新名字
+    import { hd, show as s, User as u } from './8.1.js';//也可以同时改多个名字
+
+    let site = 'lele';
+    console.log(hd);
+</script>
+
+</html>
