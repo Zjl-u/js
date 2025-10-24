@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>chuan</button>
+</body>
+<script type="module">
+    // import('./13.1.js').then((module) => {//执行完import后，就会执行后面的函数
+    //     console.log(module);
+    // });
+
+    // import 函数可以按需加载
+    // if (true) {
+    //     import('./13.1.js').then((module) => {
+    //         console.log(module);
+    //     });
+    // }
+
+    // import里面那是个对象，可以使用展开语法
+    // if (true) {
+    //     import('./13.1.js').then(({ site, url }) => {
+    //         console.log(site, url);
+    //     });
+    // }
+
+    document.querySelector('button').addEventListener('click', import('./13.1.js').then(({ site, url }) => {
+        console.log(site, url);
+    })
+    );
+</script>
+
+</html>
