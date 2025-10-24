@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script type="module">
+    // import hd, { site } from './10.1.js';//混合导入导出,不在{}里面的是默认导出，可以随便更换名字，{}里的是具名导出
+    // console.log(hd.render());
+    // console.log(site);
+
+    import * as api from './10.1.js';//批量导出
+    console.log(api.default.render());//此时要用默认导出时，不仅要加api前缀，还要加default前缀
+    console.log(api.site);
+</script>
+
+</html>
