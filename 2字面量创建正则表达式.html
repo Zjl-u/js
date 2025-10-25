@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = 'chuanchuan.';
+    let a = 'u';
+    // console.log(/u/.test(hd));//判断字符串里是否包含u  //斜杠中间夹了什么就检测谁,但它不能识别变量名字
+    console.log(eval(`/${a}/`).test(hd));//eval可以识别变量名称
+</script>
+
+</html>
