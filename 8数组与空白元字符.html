@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = 'chuan 2006';
+    // console.log(hd.match(/\d\d\d\d/));//一个\d 只取一个数字
+    // console.log(hd.match(/\d\d\d\d/g));//结尾加上g了，全局，匹配一个收过来一个
+    // console.log(hd.match(/\d+/g));//加上+表明能匹配一个或者多个
+
+    // let hd = `张三:010-9999999,李四:020-8888888`;
+    // // console.log(hd.match(/\d{3}-\d{7,8}/g));
+    // console.log(hd.match(/[^-\d:,]+/g));//在原子表里，^表示除了表里的都要
+
+    // \d 数字   \D 除了数字
+    // let hd = 'chuan 2006';
+    // console.log(hd.match(/\D+/g));
+
+    // \s空白   像空格、换行、制表符都属于空白  \S 除了空白
+    console.log(/\s/.test('\nhd'));
+    console.log(/\S/.test('\nhd'));
+</script>
+
+</html>
