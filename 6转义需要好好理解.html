@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.字面量的写法
+    // let price = 23.35;
+    // console.log(/\d+.\d+/.test(price));//这样写有问题，无论判断的数字里有没有 . 它都会判成true
+
+    // . 的含义：1.表示出换行外任意字符  2.普通字符点
+    // 从第一个变成第二个要加个\
+    // console.log(/\d+\.\d+/.test(price));
+
+    // d表示字符串 \d表示数字 0~9
+
+    // 2.对象里的写法
+    // let reg = new RegExp('\d+\.\d+');//字符串里，\d==d,\.==.
+    // 要想让对象里的按照字面量这样的显示，再每个都加\
+    // let reg = new RegExp('\\d+\\.\\d+');
+    // console.log(reg.test(price));
+
+
+
+    // 例子：网址
+    let url = 'https://www.houdunren.com';
+    console.log(/https?:\/\/\w+\.\w+\.\w/.test(url));
+    //?表示有是s可以，没有s也可以   \不能直接用，因为它表示的是正则的边界，需要加\转换一下
+</script>
+
+</html>

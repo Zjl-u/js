@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = 'chuan';
+    // console.log(/a|@/.test(hd));//选择符|逻辑和逻辑运算符是一样的
+    // console.log(/aaau|@/.test(hd));//这里检测的是'aaau'这一整个的
+
+    let tel = '010-123';
+    // console.log(/010\-\d{7,8}|020\-\d{7,8}/.test(tel));//选择符两端应该判断完整的电话号
+
+    // 由于重复了，可以使用原子组
+    console.log(/(010|020)\-\d{7,8}/.test(tel));
+</script>
+
+</html>

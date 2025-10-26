@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content">chuan</div>
+</body>
+<script>
+    // let hd = 'chuan';
+    // let a = 'u';
+    // let reg = new RegExp('a', 'g');//这种形式可以识别变量名称
+    // console.log(reg.test(hd));
+
+    // 例子：选出对应的字符标红
+    let con = prompt('请输入要检测的内容，支持正则');
+    let reg = new RegExp(con, 'g');
+    let div = document.querySelector('div');
+    div.innerHTML = div.innerHTML.replace(reg, search => {
+        return `<span style='color:red'>${search}</span>`;
+    })
+
+</script>
+
+</html>

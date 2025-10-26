@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="user">
+    <span></span>
+</body>
+<script>
+    // let hd = '2';
+    // console.log(/\d/.test(hd));//该字符串里面有数字就返回true
+    // console.log(/^\d$/.test(hd));//^表示开始，这句话里表明以数字开始  $表示结束，这里表示以数字结束
+
+    // 例子：
+    document.querySelector("[name='user']").addEventListener('keyup', function () {
+        let flag = this.value.match(/^[a-z]{3,6}$/);//[a-z]表示输出字母  {3,6}限制字母数量为3-6位 ^和$限制边界
+        document.querySelector('span').innerHTML = flag ? '正确' : '失败';
+    })
+</script>
+
+</html>
