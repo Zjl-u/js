@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // \w 表示字母数字下划线   囊括了\d
+    // let hd = 'chuan2006-';
+    // console.log(hd.match(/\w+/));
+
+    // 邮箱的识别
+    // let email = '2373007562@qq.com';
+    // console.log(email.match(/^\w+@\w+\.\w+$/));
+
+    // \W 除了字母数字下划线
+    // console.log('chuan%'.match(/\W/));
+
+    let username = prompt('请输入用户名');
+    console.log(/^[a-z]\w{4,9}$/.test(username));
+</script>
+
+</html>

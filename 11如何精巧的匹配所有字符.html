@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = `
+    <span>
+        chuan  &*^**&
+        lele
+    </span>
+    `;
+    // let xj = 'ab';
+    // console.log(xj.match(/[#%%^&*b]/));//原子表里的，只要有一个选项有，就能识别
+    // console.log(xj.match(/#%%^&*b/));//没有中括号就必须完全相同
+    // [\s\S]  \s表明空白字符  \S表示除了空白字符
+    // [\d\D] 类似
+
+    console.log(hd.match(/<span>[\s\S]+<\/span>/));
+    console.log(hd.match(/<span>[\d\D]+<\/span>/));
+
+</script>
+
+</html>

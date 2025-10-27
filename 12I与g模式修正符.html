@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = 'chUanchaUn';
+    // console.log(hd.match(/u/i));//加上i后不区分大小写
+    // console.log(hd.match(/U/g));//加上g后,所有U都能拿到
+    // console.log(hd.match(/u/ig));//加上i和g后，几不区分大小写还能全部拿到,ig前后顺序无所谓
+
+    // 全局替换，不区分大小写
+    console.log(hd.replace(/u/ig, '@'))
+</script>
+
+</html>

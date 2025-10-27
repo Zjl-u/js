@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // . 除了换行符都能表示
+    // let hd = 'houdunren%&&^XU';
+    // console.log(hd.match(/.+/));
+
+    // \. 表示点
+    // let url = 'https://www.chuan.com';
+    // console.log(url.match(/https?:\/\/\w+\.\w+\.\w+/));
+
+    // 不能匹配换行符
+    // let hd = `
+    // chuan.com
+    // asdef
+    // `
+    // console.log(hd.match(/.+/)[0]);
+
+    // 空格
+    let tel = '010 - 9999999';
+    console.log(tel.match(/\d+ -\s\d{7}/));//可以直接敲个空格，或者用\s
+</script>
+
+</html>
