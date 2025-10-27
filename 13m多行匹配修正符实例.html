@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = `
+    #1 js,200元 #
+    #2 php,300元 #
+    #9 chuan # 川川
+    #3 node.js,180元 #
+    `
+    // [{name:'jds',price:'200元'}]
+    // m 表示每行单独处理
+    let lessons = hd.match(/^\s*#\d+\s+.+\s+#$/gm).map(v => {
+        v = v.replace(/\s*#\d+\s*/, '').replace(/\s*#/, '');
+        [name, price] = v.split(',');
+        return { name, price };
+    });
+    console.log(JSON.stringify(lessons, null, 2));
+</script>
+
+</html>

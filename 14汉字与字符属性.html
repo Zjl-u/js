@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // [L] 字符有这个属性证明是字母
+    let hd = 'chuan2006.屁股很润，很翘！S';
+    // console.log(hd.match(/\p{L}/gu));//此时只匹配到字母，不匹配到数字
+    // console.log(hd.match(/\p{P}/gu));//此时只匹配标点
+
+    // 找到字符里的中文
+    console.log(hd.match(/\p{sc=Han}/gu));
+</script>
+
+</html>
