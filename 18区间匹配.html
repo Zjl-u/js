@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="username">
+</body>
+<script>
+    // let hd = '2025';
+    // console.log(hd.match(/[0-9]+/g));
+    // let hd = 'chuan';
+    // console.log(hd.match(/[a-z]+/g));
+
+    let input = document.querySelector("[name='username']");
+    input.addEventListener('keyup', function () {
+        console.log(this.value.match(/^\w{3,6}$/i));
+    })
+</script>
+
+</html>

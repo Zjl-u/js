@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = 'chuan.love';
+    // console.log(hd.match(/[^ue]/ig));//除了ue都匹配
+
+    let hd = `川川:010-9999999,李四:020-88888888`;
+    console.log(hd.match(/[^\d:\-,]/g));
+    console.log(hd.match(/\p{sc=Han}+/gu));
+</script>
+
+</html>

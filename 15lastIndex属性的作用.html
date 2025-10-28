@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = 'chuanchuan';
+    // 字符串方法
+    // console.log(hd.match(/\w/g));//这种方法会丢失属性
+
+    // 正则表达式
+    let reg = /\w/g;
+    console.log(reg.exec(hd));
+    console.log(reg.exec(hd));//每一个每一个字符走
+
+    // 该现象的原因是正则有一个属性lastIndex
+    // 可以用这个现象取得每一个值  在全局模式下
+    while (res = reg.exec(hd)) {
+        console.log(res);
+    }
+</script>
+
+</html>

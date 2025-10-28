@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = 'chuanchuan';
+    // // g会忽略不是正则要找的
+    // let reg = /u/g;
+    // console.log(reg.exec(hd));
+    // console.log(reg.lastIndex);
+    // console.log(reg.exec(hd));
+    // console.log(reg.lastIndex);
+
+    // y不会忽略
+    // let reg = /u/y;
+    // console.log(reg.exec(hd));//第一个不是u就直接停下，把lastIndex指向0
+    // console.log(reg.lastIndex);
+    // console.log(reg.exec(hd));
+    // console.log(reg.lastIndex);
+
+    // 它可以在大的寻找里提高效率
+    let hd = `川川QQ:12345677890,83287682359782,35221212
+    川川每次都想法子买零食，把人喂得饱饱的  chuan.sowq`
+
+    let reg = /(\d+),?/y;
+    reg.lastIndex = 5;
+    let qq = [];
+    while (res = reg.exec(hd)) {
+        qq.push(res[1]);
+    }
+    console.log(qq);
+</script>
+
+</html>
