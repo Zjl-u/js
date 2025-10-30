@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = 'h';
+    // console.log(hd.match(/hd+/));//hd+  有1个或者多个hd  
+    // 但满足后就会把剩下的d都匹配   这个叫贪婪匹配
+
+    // console.log(hd.match(/hd*/));//hd*  有0个或者多个h或者d  
+    // 但满足后就会把剩下的d都匹配   这个叫贪婪匹配
+
+    // console.log(hd.match(/hd{1,3}/));//会找1个到3个d
+    // 这个也叫贪婪匹配  如果能匹配3个就会拿三个
+
+    // console.log(hd.match(/hd{1,}/));//把下限卡成1，上限不卡，相当于+
+
+    // console.log(hd.match(/hd{0,}/));//把下限卡成0，上限不卡，相当于*
+
+    console.log(hd.match(/hd?/));//有或者没有 后面有没有d都能匹配上，有的话只取1个d   贪婪匹配--能匹配1就匹配1
+
+</script>
+
+</html>
