@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = `
+        <h1>chuan</h1>
+        <h2>lele</h2>
+    `
+    let reg = /<(h[1-6])>([\s\S]*)<\/\1>/i;//\1 \2这样的数字能取到对应的原子组  因为原子组有对应的编号
+    console.dir(hd.match(reg));
+</script>
+
+</html>

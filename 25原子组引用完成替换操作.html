@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = `
+    <h1>chuan</h1>
+    <span>le</span>
+    <h2>cc</h2>
+    `
+    let reg = /<(h[1-6])>([\s\S]+)<\/\1>/ig;
+    // 普通替换
+    // console.log(hd.replace(reg, `<p>$2</p>`));
+
+    // 函数替换
+    let res = hd.replace(reg, (p0, p1, p2) => {//原子组的序号：从左边往右数（
+        return `<p>${p2}</p>`;
+    });
+    console.log(res);
+</script>
+
+</html>

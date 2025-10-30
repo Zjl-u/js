@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>川川</p>
+    <h1>chuan
+        cc
+    </h1>
+    <h2>le</h2>
+    <h3></h3>
+</body>
+<script>
+    let body = document.body;
+    let reg = /<(h[1-6])>[\s\S]*<\/\1>/gi;
+    body.innerHTML = body.innerHTML.replace(reg, '');
+
+</script>
+
+</html>

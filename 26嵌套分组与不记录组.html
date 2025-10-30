@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = `
+    https://www.chuan.com
+    http://hou.com
+    https://lele.com
+    `
+    let reg = /https?:\/\/((?:\w+\.)?\w+\.(?:com|org|cn))/ig;//?:表示这个原子组内容不记录  ?表示可能有可能没有
+    // console.dir(hd.match(reg));
+    let urls = [];
+    while (res = reg.exec(hd)) {
+        urls.push(res[1]);
+    }
+    console.log(urls);
+</script>
+
+</html>
