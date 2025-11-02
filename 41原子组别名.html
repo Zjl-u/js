@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = `
+        <h1>chuan</h1>
+        <span>川川</span>
+        <h2>lele</h2>
+    `
+    // 正常数字排序知道原子组
+    // let reg = /<(h[1-6])>(.*?)<\/\1>/gi;
+    // console.log(hd.replace(reg, '<h4>$2</h4>'));
+
+    // 原子组别名
+    let reg = /<(h[1-6])>(?<con>.*?)<\/\1>/gi;//?<> 给原子组起别名
+    console.log(hd.replace(reg, '<h4>$<con></h4>'));
+</script>
+
+</html>

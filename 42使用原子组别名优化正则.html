@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <a href="https://www.chuan.com">川川</a>
+        <a href="https://www.baidu.com">chuan</a>
+        <a href="https://www.lele.com">lele</a>
+    </main>
+</body>
+<script>
+    const main = document.querySelector('main');
+    const reg = /<a.*?href=(['"])(?<link>.*?)\1>(?<title>.*?)<\/a>/ig;
+    const links = [];
+    for (const element of main.innerHTML.matchAll(reg)) {
+        links.push(element['groups']);
+    }
+    console.log(links);
+</script>
+
+</html>

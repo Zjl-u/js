@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        川川的屁股很好摸，屁股很润
+    </main>
+</body>
+<script>
+    let reg = /屁股/g;
+    const main = document.querySelector('main');
+    // 字符串方法match
+    // console.log(main.innerHTML.match(reg));;
+
+    // 正则方法exec
+    // console.log(reg.exec(main.innerHTML));
+
+    // 两者在普通模式下区别不大，而全局模式下，match只剩内容，细节没有了，而exec能保留细节
+    // 而且exec有lastIndext属性，连续调用会一直向后寻找
+    let count = 0;
+    while (res = reg.exec(main.innerHTML)) {
+        count++;
+    }
+    console.log(count);
+</script>
+
+</html>
