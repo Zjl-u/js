@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let users = `
+        川川电话:12345678987
+        乐乐电话:19876543234
+    `
+    let reg = /(?<=\d{7})\d{4}/ig;
+    users = users.replace(reg, v => {
+        return '*'.repeat(4);//字符串的重复 repeat
+    })
+    console.log(users);
+</script>
+
+</html>

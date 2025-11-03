@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        川川的屁股很好摸，川川屁股很润。
+    </main>
+</body>
+<script>
+    let main = document.querySelector('main');
+    let reg = /川川(?=屁股)/g;//这个(?= )相当于限定条件,后面是屁股
+    main.innerHTML = main.innerHTML.replace(reg, `<a href='https://www.baidu.com'>$&</a>`);
+    console.log(main.innerHTML);
+</script>
+
+</html>

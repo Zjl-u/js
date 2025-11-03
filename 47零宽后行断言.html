@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <a href="https://www.baidu.com">百度</a>
+        <a href="https://www.yahoo.com">雅虎</a>
+    </main>
+</body>
+<script>
+    // let hd = 'chuanchuan19suichuanjk';
+    // const reg = /(?<=chuanchuan)\d+/i;//(?<= )前面的限制条件
+    // console.log(hd.match(reg));
+
+    const main = document.querySelector('main');
+    const reg = /(?<=href=(['"])).+(?=\1)/ig;
+    main.innerHTML = main.innerHTML.replace(reg, "https://www.chuan.com");
+</script>
+
+</html>

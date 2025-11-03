@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // ?=  表示后面是什么    ?! 表示后面不是什么
+    let hd = 'chuanchuan19suichuanjk';
+    // let reg = /[a-z]+(?!\d+)/i;
+    // console.log(hd.match(reg));//此时取的不是想象中结尾的那些字母，反而是chuanchua，如果想取想取的这一段，需要加限定
+
+    let reg = /[a-z]+(?!\d+)$/i;//$和限制条件没关系
+    console.log(hd.match(reg));
+</script>
+
+</html>
