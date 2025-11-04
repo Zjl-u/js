@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <a href="https://www.chuan.com/">1.jpg</a>
+        <a href="https://oss.chuan.com/">2.jpg</a>
+        <a href="https://cdn.chuan.com/">3.jpg</a>
+        <a href="https://chuan.com/">川川</a>
+    </main>
+</body>
+<script>
+    const main = document.querySelector('main');
+    const reg = /https:\/\/([a-z]+)?(?<!oss)\..+?(?=\/)/ig;
+    main.innerHTML = main.innerHTML.replace(reg, v => {
+        return 'https://oss.chuan.com';
+    })
+</script>
+
+</html>

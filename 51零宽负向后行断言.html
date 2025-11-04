@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = 'chuanchuan19suichuanjk';
+    // ?<! 前面不是谁   ?<=前面是谁
+    // let reg = /(?<!\d+)[a-z]+/i;//chuanchuan
+    let reg = /(?<!\d+).+/i;//chuanchuan19suichuanjk
+    console.log(hd.match(reg));
+</script>
+
+</html>

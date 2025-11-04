@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="username">
+</body>
+<script>
+    const input = document.querySelector('input');
+    input.addEventListener('keyup', function () {
+        const reg = /^(?!.*川川.*)[a-z]{5,6}$/i;//.*表示别的字符串0-正无穷
+        console.log(this.value.match(reg));
+    })
+</script>
+
+</html>
