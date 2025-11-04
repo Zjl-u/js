@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //  异步加载，大概就是把耗时长的任务给一部分单独先做着，然后主程序运行完，那一部分做好了返回内容
+
+    function loadImag(src, resolve, reject) {
+        let image = new Image();
+        image.src = src;
+        image.onload = () => {
+            resolve(image);
+        };
+        image.error = reject;
+    }
+    loadImag('1.jpg',
+        (image) => {
+            document.body.appendChild(image);
+        }, () => {
+            console.log('加载失败');
+        });
+    console.log('cc');
+</script>
+
+</html>
