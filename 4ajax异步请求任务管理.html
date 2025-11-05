@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="4.1ajax.js"></script>
+<script>
+    ajax(`http://localhost:8888/user?name=川川`, () => {
+        console.log('川川');
+    });
+    // 请求是一个异步
+    // 请求里面有另一个请求，那么需要先执行里面的请求然后才会执行外面的请求
+    console.log('chuan');
+</script>
+
+</html>
