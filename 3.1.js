@@ -1,1 +1,4 @@
-console.log(document.querySelector('button'));
+function chuan() {
+    hd();
+    console.log('3.1.js');
+}
