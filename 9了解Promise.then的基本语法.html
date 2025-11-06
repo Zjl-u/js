@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // new Promise((resolve, reject) => {
+    //     resolve('一瓶可乐');
+    //     reject('买不起');
+    // }).then(
+    //     value => {
+    //         console.log(value);
+    //     },
+    //     reason => {
+    //         console.log(reason);
+    //     })
+
+    // 也能去写单独的一项
+
+    // 如果只看成功，后面可以直接不写不成功的
+    // new Promise((resolve, reject) => {
+    //     resolve('一瓶可乐');
+    //     // reject('买不起');
+    // }).then(
+    //     value => {
+    //         console.log(value);
+    //     })
+
+    // 如果只看失败，需要写个null占位
+    // new Promise((resolve, reject) => {
+    //     // resolve('一瓶可乐');
+    //     reject('买不起');
+    // }).then(null,
+    //     reason => {
+    //         console.log(reason);
+    //     })
+
+    // 如果有个空值then，则向后传递
+    // new Promise((resolve, reject) => {
+    //     // resolve('一瓶可乐');
+    //     reject('买不起');
+    // }).then().then(null,
+    //     reason => {
+    //         console.log(reason);
+    //     })
+
+    // 如果前面有then,则只管前面那个
+    new Promise((resolve, reject) => {
+        // resolve('一瓶可乐');
+        reject('买不起');
+    }).then(null, a => {
+        console.log(`处理失败状态`);
+    }).then(null,
+        reason => {
+            console.log(reason);
+        })
+</script>
+
+</html>
