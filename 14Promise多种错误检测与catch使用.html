@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // new Promise((resolve, reject) => {
+    //     // resolve('fulfilled');
+
+    //     // 1.直接返回错误
+    //     // reject('rejected');
+
+    //     // 2.返回错误对象
+    //     reject(new Error('promise fail'))
+    // }).then(
+    //     value => console.log(value),
+    //     reason => console.log(reason.message)
+    // )
+
+    // 3.直接丢出错误
+    // new Promise((resolve, reject) => {
+    //     throw new Error('fail');
+    // }).then(
+    //     value => console.log(value),
+    //     reason => console.log(reason.message)
+    // )
+
+    // 4.写一个不该写在这里的错误
+    // new Promise((resolve, reject) => {
+    //     // hd + 1;
+    //     // 上面这一句相当于下面的try catch   不过这个是系统帮忙搞的
+    //     // try{
+    //     //     hd+1;
+    //     // }catch(error){
+    //     //     reject(error);
+    //     // }
+    // }).then(
+    //     value => console.log(value),
+    //     reason => console.log(reason.message)
+    // )
+
+
+    new Promise((resolve, reject) => {
+        resolve('fulfilled');
+    }).then(
+        value => {
+            return new Promise((resolve, reject) => {
+                reject('p2');
+            })
+        }).then(value => {
+            console.log(value);
+        }, reason => {//如果想单独处理一个Promise的，可以直接单独写一个
+            console.log(reason);
+        })
+        .catch(error => {//前面没写处理错误方案的，可以直接写一个catch集中处理
+            console.log(error);
+        })
+</script>
+
+</html>
