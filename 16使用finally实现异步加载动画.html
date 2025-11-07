@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            color: white;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">loading...</div>
+</body>
+<script>
+    ajax(`http://localhost：8888/user.php?name=川川`).then(value => {
+        console.log(value);
+    }).finally(() => {
+        loading.style.display = 'none';
+    })
+    // const promise = new Promise((resolve, reject) => {
+    //     resolve('cc');
+    // }).then(msg => {
+    //     console.log('resolve');
+    // }).catch(error => { })
+    //     .finally(() => {//无论是否成功执行，finally都能执行
+    //         console.log('永远会执行')
+    //     })
+</script>
+
+</html>
