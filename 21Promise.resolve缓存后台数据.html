@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="16.1ajax.js"></script>
+<script>
+    // console.log(Promise.resolve('chuan'));
+    // Promise.resolve('chuan').then(value => {
+    //     console.log(value);
+    // })
+
+    // 例子
+    // function query(name) {
+    //     return ajax(`http://localhost:8888/4.2user.php?name=${name}`).then(user => {
+    //         return user;
+    //     })
+    // }
+    // query('川川').then(user => {
+    //     console.log(user);
+    // })
+
+    // 如果想1秒后再使用，但不想再请求后台，我们可以做缓存
+    function query(name) {
+        const cache = query.cache || (query.cache = new Map());
+        if (cache.has(name)) {
+            console.log('走缓存了');
+            return Promise.resolve(cache.get(name));
+            //这一步相当于Promise(resolve=>{cache.get(name)})
+        }
+        return ajax(`http://localhost:8888/4.2user.php?name=${name}`).then(
+            user => {
+                cache.set(name, user);
+                console.log('没走缓存');
+                return user;
+            })
+    }
+    query('川川').then(user => {
+        console.log(user);
+    })
+</script>
+
+</html>
