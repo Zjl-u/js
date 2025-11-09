@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="4.1ajax.js"></script>
+<script>
+    // Promise谁快用哪个
+
+    // const cc = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve('第一个异步');
+    //     }, 2000)
+    // })
+    // const lele = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve('第二个异步');
+    //     }, 1000)
+    // })//谁的时间比较快选谁
+    // Promise.race([cc, lele]).then(result => {
+    //     console.log(result);
+    // }).catch(error => {
+    //     console.log(error);
+    // })
+
+    // 请求后台超时处理
+    function query(url, delay = 2000) {
+        let promise = [
+            ajax(url),
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    reject('请求超时');
+                }, delay)
+            })
+        ]
+        return Promise.race(promises);
+    }
+    query(`http://localhost/4.2user.php?name=川川`, 1000).then(value => {
+        console.log(value);
+    }).catch(error => {
+        console.log(error);
+    })
+</script>
+
+</html>

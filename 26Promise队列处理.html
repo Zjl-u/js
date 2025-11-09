@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="4.1ajax.js"></script>
+<script>
+    // 下一个Promise要等上一个Promise执行完再执行
+    let promise = Promise.resolve('cc');
+    promise = promise.then(v => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                console.log(1);
+                resolve();
+            }, 1000)
+        })
+    })
+    promise.then(v => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                console.log(2);
+                resolve();
+            }, 1000)
+        })
+    })
+
+    // 队列就是里面每个成员都是Promise，下一个then依赖上一个Promise的结果
+</script>
+
+</html>

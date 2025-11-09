@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="4.1ajax.js"></script>
+<script>
+    // const p1 = new Promise((resolve, reject) => {
+    //     reject('rejected');
+    // })
+    // const p2 = new Promise((resolve, reject) => {
+    //     resolve('resolved');
+    // })
+    // Promise.allSettled([p1, p2]).then(results => {
+    //     console.log(results);
+    // })
+    // Promise.allSettled 里面有失败的，也能获得该接口，只是状态是拒绝的
+
+    let promises = ['cc', 'kk'].map(name => {
+        return ajax(`http://localhost:8888/4.2user.php?name=${name}`)
+    })
+    Promise.allSettled(promises).then(values => {
+        let users = values.filter(user => {
+            return user.status == 'fulfilled';
+        })
+        console.log(users);
+    });
+</script>
+
+</html>

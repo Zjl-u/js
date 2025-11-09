@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="16.1ajax.js"></script>
+<script>
+    let hd = {
+        then(resolve, reject) {
+            resolve('cc');
+        }
+    }
+    Promise.resolve(hd).then(value => {
+        // console.log(value);
+    })
+    // Promise(reject('fail')).then(value => {
+    //     console.log(value);//这里取不到值
+    // }).catch(error => {
+    //     console.log(error);
+    // })
+
+    new Promise((resolve, reject) => {
+        resolve('cc');
+    }).then(value => {
+        if (value != '成功') {
+            // throw new Error('fail');
+            return Promise.reject('参数错误');
+            // 这两种方法都可以被catch接收
+        }
+    }).catch(error => {
+        console.log(error + 'fail');
+    })
+</script>
+
+</html>
