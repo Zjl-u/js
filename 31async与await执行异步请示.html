@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="16.1ajax.js"></script>
+<script>
+    async function get(name) {
+        let host = 'http://localhost/4.2user.php';
+        let user = await ajax(`${host}/user.php?name=${user}`);
+        let lessons = await ajax(`${host}/houdunren.php?id=${user.id}`);
+        console.log(lessons);
+    }
+    get('川川');
+</script>
+
+</html>

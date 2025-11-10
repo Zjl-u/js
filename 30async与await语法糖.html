@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // async 约等于new Promise
+
+    // 可以返回正常东西
+    // async function hd(params) {
+    //     console.log('cc');
+    // }
+
+    // 可以返回Promise
+    // async function hd(params) {
+    //     return new Promise(resolve => {
+    //         console.log('cc');
+    //         resolve('lele');
+    //     });
+    // }
+
+    // 返回的Promise里可以加定时器
+    // async function hd(params) {
+    //     return new Promise(resolve => {
+    //         setTimeout(() => {
+    //             console.log('cc');
+    //             resolve('lele');
+    //         }, 2000)
+    //     });
+    // }
+    // hd().then(v => console.log(v));
+
+    // await 约等于then
+    // async function hd(params) {
+    //     let name = await 'cc';
+    //     console.log(name);
+    // }
+
+    // 可以返回Promise
+    async function hd(params) {
+        let name = await new Promise(resolve => {
+            setTimeout(() => {
+                resolve('cc');
+            }, 2000);
+        })
+        let site = await new Promise(resolve => {
+            setTimeout(() => {
+                resolve(name + ' lele');
+            }, 2000);
+        })
+        console.log(site);
+    }
+    hd();
+</script>
+
+</html>
