@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="16.1ajax.js"></script>
+<script>
+    // 函数声明
+    // async function get(name) {
+    //         let user = await ajax(`http://localhost/4.2user.php?name=${name}`);
+    //     }
+    // get('川川').then(user => {
+    //     console.log(user);
+    // })
+
+    // 声明成变量
+    // let get = async function (name) {
+    //     let user = await ajax(`http://localhost/4.2user.php?name=${name}`);
+    // }
+    // get('川川').then(user => {
+    //     console.log(user);
+    // })
+
+    // 声明成对象
+    // let hd = {
+    //     async get(name) {
+    //         return await ajax(`http://localhost/4.2user.php?name=${name}`);
+    //     }
+    // }
+    // hd.get('川川').then(user => {
+    //     console.log(user);
+    // })
+
+    // 封装成类
+    class User {
+        async get(name) {
+            return await ajax(`http://localhost/4.2user.php?name=${name}`);
+        }
+    }
+    new User().get('川川').then(user => {
+        console.log(user);
+    })
+</script>
+
+</html>

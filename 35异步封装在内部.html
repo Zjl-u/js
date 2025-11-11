@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="16.1ajax.js"></script>
+<script>
+    class User {
+        async get(name) {
+            let user = await ajax(`http://localhost/4.2user.php?name=${name}`);
+            user.name += "-chuan";
+            console.log(user);
+            return user;
+        }
+    }
+    new User().get('川川').then(user => {
+        console.log(user);
+    });
+</script>
+
+</html>

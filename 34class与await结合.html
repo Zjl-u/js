@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="16.1ajax.js"></script>
+<script>
+    class User {
+        constructor(name) {
+            this.name = name;
+        }
+        then(resolve, reject) {
+            let user = ajax(`http://localhost/4.2user.php?name=${this.name}`)
+            resolve(user);
+        };
+    }
+    async function get() {
+        await new User('lele');
+        console.log('cc');
+    }
+    get();
+</script>
+
+</html>
