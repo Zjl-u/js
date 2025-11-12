@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="16.1ajax.js"></script>
+<script>
+    // 一个Promise
+    // async function hd(name) {
+    //     try {
+    //         let user = await ajax(`http://localhost/4.2user.php?name=${name}`);
+    //         return user;
+    //     } catch (error) {
+    //         console.log(error.message);
+    //     }
+    // }
+    // hd('川川');
+
+    // 多个Promise
+    async function hd(name) {
+        try {
+            let user = await ajax(`http://localhost/4.2user.php?name=${name}`);
+            let lessons = await ajax(`http://localhost/4.2user.php?name=${user.id}`);
+            return lessons;
+        } catch (error) {
+            alert(error.message);
+        }
+    }
+    hd('川川').then(lessons => {
+        console.log(lessons);
+    });
+
+    // 放在函数内部，就要用try catch，放在外部的话，把try部分写在函数里，catch写在外面
+</script>
+
+</html>

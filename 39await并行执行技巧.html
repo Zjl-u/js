@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="16.1ajax.js"></script>
+<script>
+    function p1() {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve('lele')
+            }, 2000)
+        })
+    }
+    function p2() {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve('cc')
+            }, 2000)
+        })
+    }
+    // async function hd() {
+    //     let h1 = await p1();
+    //     // console.log(h1);
+    //     let h2 = await p2();
+    //     // console.log(h2);
+    //     // 这个时候前后执行
+    //     // setTimeout(() => {
+    //     //     console.log(h1, h2)
+    //     // }, 2000)// 这个时候并行执行  法1
+
+    //     h1value = await h1;
+    //     h2value = await h2;
+    //     console.log(h1value, h2value);//并行执行  法2
+    // }
+    //并行执行  法3
+    async function hd() {
+        let res = await Promise.all([p1(), p2()]);
+        console.log(res);
+    }
+
+    hd();
+</script>
+
+</html>

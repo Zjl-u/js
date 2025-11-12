@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="16.1ajax.js"></script>
+<script>
+    // Promise的错误处理
+    // new Promise((resolve, reject) => {
+    //     throw new Error('fail');
+    // }).catch(error => {
+    //     console.log(error);
+    // })
+
+    // async的错误处理
+    // async function hd() {
+    //     // console.log(a);//输出一个未定义的变量,是错误
+    //     throw new Error('fail');
+    // }
+    // hd().catch(error => {
+    //     console.log(error);
+    // })
+    async function hd() {
+        return ajax(`http://localhost/4.2user.php?name=${name}`);
+    }
+    hd('川川').then(user => {
+        console.log(user);
+    }).catch(error => {
+        console.log('Error' + error);
+    })
+</script>
+
+</html>
