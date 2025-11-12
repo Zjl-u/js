@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    setTimeout(() => {
+        console.log('cc');
+    }, 0)//定时器的时间是经过多少时间放进宏任务列表
+    setTimeout(() => {
+        console.log('kk');
+    }, 2000)
+    console.log('lele');
+</script>
+
+</html>
