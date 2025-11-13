@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function hd() {
+    //     for (let i = 0; i < num; i++) {
+    //         count += num--;
+    //     }
+    //     console.log(count);
+    // }
+    // let num = 976435778781233;
+    // let count = 0;
+    // hd();
+    // console.log('川川');
+    // 上面它必须执行完才能输出川川
+
+    // 可以拆成多个子任务来完成
+    function hd() {
+        for (let i = 0; i < 10000000; i++) {//先用比较小的数代替num
+            if (num <= 0) break;
+            count += num--;
+        }
+        if (num > 0) {
+            setTimeout(hd)
+        } else {
+            console.log(count);
+        }
+
+    }
+    let num = 976435778781233;
+    let count = 0;
+    hd();
+    console.log('川川');
+</script>
+
+</html>

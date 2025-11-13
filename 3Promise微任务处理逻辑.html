@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    setTimeout(() => {
+        console.log('定时器');
+        new Promise(resolve => {
+            console.log('setTimeout Promise');
+            resolve();
+        }).then(() => {
+            console.log('setTimeout then');
+        })
+    }, 0)
+    new Promise(resolve => {
+        console.log('Promise');
+        resolve();
+    }).then(() => {
+        console.log('then');
+    })
+    console.log('川川');
+</script>
+
+</html>
