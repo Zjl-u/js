@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="1.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+    let p = new HD((resolve, reject) => {
+        resolve('解决');
+        // reject('rejected');
+    }).then(value => {
+        return new HD((resolve, reject) => {
+            // resolve('lele');
+            reject('huaicc');
+        })
+    }).then(value => {
+        console.log(value);
+    }, reason => {
+        console.log('rejected:' + reason);
+    })
+
+    console.log('cc');
+</script>
+
+</html>
